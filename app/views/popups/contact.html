@@ -1,0 +1,37 @@
+<div class="inner" contact>
+
+  <h1>Have feedback <br />for us?</h1>
+
+  <p>We'd love to hear!</p>
+
+  <form>
+    <div class="form">
+      <div class="form_row">
+        <input type="text" validate="'empty|email'" name="fromEmail" placeholder="your email" value="{{email}}" autofocus/>
+      </div>
+      <div class="form_row">
+        <select name="subject">
+          <option value="Quality of Recommendations">Quality of Recommendations</option>
+          <option value="Sphere Activation">Sphere Activation</option>
+          <option value="Sphere Registration">Sphere Registration</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form_row">
+        <textarea data-validate="'empty'" name="content" placeholder="message"></textarea>
+      </div>
+      <div class="button_wrapper">
+        <button type="submit" class="button {{userInfo.pallet}}_bg_hover">Send</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <footer>
+    <p style="margin-top: 30px;">
+      Click with confidence. <br />View Our &nbsp;<a href="http://www.outbrain.com/privacy-new" class="{{userInfo.pallet}}_text" target="_blank">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>

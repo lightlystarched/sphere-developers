@@ -1,0 +1,440 @@
+@import 'compass/css3';
+@import "../bower_components/sphere-variables/variables";
+
+// Variables
+$get-color: rgb(38,144,251);
+$get-background: rgba(38,144,251,0.2);
+$post-color: rgb(99,204,155);
+$post-background: rgba(99,204,155,0.2);
+$delete-color: rgb(218,68,82);
+$delete-background: rgba(218,68,82,0.2);
+$put-color: #f9f2e9;
+$put-background: #f0e0ca;
+$patch-color: #FCE9E3;
+$patch-background: #F5D5C3;
+
+#api-docs {
+  * {
+    outline: none;
+  }
+  ul {
+    list-style: none;
+    margin-left: none;
+    .collapse {
+      overflow:hidden !important;
+      padding: 0;
+      border-width:0;
+      &.in {
+        padding: 10px;
+        border-width: 1px;
+        &.in-add-active {
+          max-height: 1000px;
+        }
+        &.in-add-remove {
+          max-height: 0;
+        }
+      }
+    }
+
+
+    .collapse {
+      display: block !important;
+      visibility: visible !important;
+      max-height: 0;
+      -webkit-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+      -moz-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+      -ms-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+      -o-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+      transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+      &.in, .ng-show {
+        max-height: 100%;
+      }
+
+      &.in-remove-active, &.ng-show-remove {
+        max-height: 0;
+        padding: 10px;
+        border-width: 1px;
+      }
+
+      &.in-add-active, &.ng-show-active {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+.swagger-ui {
+  color: #fff;
+  .api-description {
+    font-weight: 300;
+    a {
+      color: $sphere-color;
+      text-decoration: underline;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .endpoint {
+    a {
+      text-decoration: none;
+      color: #999;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+
+    h4 span {
+      color: #999;
+    }
+
+    ul.pull-right {
+      line-height: 1.1;
+      margin: 10px 0;
+      li {
+        border-right: 1px solid #ddd;
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    &.active {
+      a {
+        color: #fff;
+      }
+
+      ul.pull-right li a {
+        color: #555;
+      }
+    }
+  }
+
+  .endpoint-heading {
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    a { text-transform: capitalize; }
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .endpoint-actions {
+    float: right;
+    text-transform: capitalize;
+    li {
+      display: inline-block;
+      padding: 0 10px;
+      margin: 0;
+      a {
+        text-decoration: none;
+        color: #aaa;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .operation {
+    margin-bottom: 10px;
+    font-weight: 300;
+    .heading a:hover {
+      text-decoration: none;
+    }
+
+    .http-method {
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 7px 0 4px;
+      text-align: center;
+      width: 50px;
+      border-radius: 0;
+      display: inline-block;
+      font-size: .7em;
+    }
+    .path {
+      color: #fff;
+      padding-left: 10px;
+      display: inline-block;
+    }
+    .description {
+      margin: 2px 10px 0 0;
+    }
+    .content {
+      padding: 10px;
+      border-top: 0 !important;
+      h5 {
+        text-transform: capitalize;
+        font-weight: normal;
+        font-size: 1.1em;
+        margin: 0;
+        padding: 15px 0 5px;
+      }
+      h4 {
+        font-size: 1.1em;
+        margin: 0;
+        padding: 15px 0 5px;
+      }
+      .table {
+        margin: 0;
+        font: inherit;
+        table-layout: fixed;
+        min-width: 650px;
+        margin-bottom: 15px;
+        &.table-responsive {
+          td, th {
+            white-space: initial;
+          }
+        }
+      }
+
+      thead th {
+        color: #666;
+        font-weight: normal;
+        text-transform: capitalize;
+        padding: 5px;
+        font-size: 0.9em;
+        color: #aaaaaa;
+        border-bottom: 1px solid #999999;
+      }
+      td {
+        padding: 6px;
+        font-size: 0.9em;
+        color: #cccccc;
+        border-bottom: 1px solid #cccccc;
+        vertical-align: top;
+        line-height: 1.3em;
+      }
+      pre {
+        color: #aaa;
+        background-color: #222222;
+        border: 1px solid #d1d8a2;
+        padding: 10px;
+        max-height: 200px;
+        overflow: auto;
+        font-size: .9em;
+        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+        border-radius: 0;
+        margin-top: 0;
+
+        &.model {
+          font: inherit;
+          border: 0;
+          background: transparent !important;
+          height: auto;
+          max-height: initial;
+          cursor: text;
+          font-size: .9em;
+          strong {
+            font-weight: bold;
+            color: #fff;
+            font-size: .9em;
+          }
+          .type {
+            color: #9ba3ff;
+            border-bottom: 0;
+          }
+          .pad {
+            margin-left: 1em;
+          }
+        }
+      }
+
+      input, textarea {
+        width: 100%;
+      }
+      textarea {
+        height: 100px;
+        resize: none;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: .9em;
+      }
+      label {
+        font-weight: normal;
+      }
+
+      ul.schema {
+        margin: 0;
+        li {
+          border-right: 1px solid #ddd;
+          margin: 0 5px 5px 0;
+          padding: 2px 5px 2px 0;
+          &:last-child {
+            border-right: 0;
+          }
+          a {
+            color: #aaa;
+            &.active, &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .parameters {
+        pre {
+          cursor: pointer;
+          &:hover {
+            background-colors: #ffd;
+          }
+        }
+        .name, .value, .desc, .type, .code, .data {
+          font-weight: normal;
+          text-transform: capitalize;
+          padding: 5px;
+          font-size: 0.9em;
+          color: #aaaaaa;
+          border-bottom: 1px solid #999999;
+        }
+        .name {
+          width: 12%;
+        }
+        .value {
+          width: 30%;
+        }
+        .desc {
+          width: 20%;
+        }
+        .type {
+          width: 12%;
+        }
+        .code {
+          width: 15%;
+        }
+      }
+
+      .hide-try-it {
+        text-decoration: underline;
+        padding: 4px 0 0 10px;
+      }
+    }
+  }
+  .get {
+    .heading, .content {
+      background-color: $get-background;
+      border: 1px solid $get-color;
+    }
+    .http-method {
+      background-color: $get-color;
+    }
+    h5, .description {
+      color: $get-color;
+    }
+
+    a.hide-try-it {
+      color: $get-color;
+    }
+  }
+  .post {
+    .heading, .content {
+      background-color: $post-background;
+      border: 1px solid $post-color;
+    }
+    .http-method {
+      background-color: $post-color;
+    }
+    h5, .description {
+      color: $post-color;
+    }
+
+    a.hide-try-it {
+      color: $post-color;
+    }
+  }
+  .delete {
+    .heading, .content {
+      background-color: $delete-background;
+      border: 1px solid $delete-color;
+    }
+    .http-method {
+      background-color: $delete-color;
+    }
+    h5, .description {
+      color: $delete-color;
+    }
+
+    a.hide-try-it {
+      color: $delete-color;
+    }
+  }
+  .put {
+    .heading, .content {
+      background-color: $put-background;
+      border: 1px solid $put-color;
+    }
+    .http-method {
+      background-color: $put-color;
+    }
+    h5, .description {
+      color: $put-color;
+    }
+
+    a.hide-try-it {
+      color: $put-color;
+    }
+  }
+
+  .patch {
+    .heading, .content {
+      background-color: $patch-background;
+      border: 1px solid $patch-color;
+    }
+    .http-method {
+      background-color: $patch-color;
+    }
+    h5, .description {
+      color: $patch-color;
+    }
+
+    a.hide-try-it {
+      color: $patch-color;
+    }
+  }
+
+  .head {
+    .heading, .content {
+      background-color: #fcffcd;
+      border: 1px solid #ffd20f;
+    }
+    .http-method {
+      background-color: #ffd20f;
+    }
+    h5, .description {
+      color: #ffd20f;
+    }
+
+    a.hide-try-it {
+      color: #6fc992;
+    }
+  }
+
+  ul.schema {
+    display: block;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    li {
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      padding: 2px 5px 2px 0;
+      border-right: 1px solid #ddd;
+      text-transform: capitalize;
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+  .btn.btn-default {
+    display: block;
+    clear: none;
+    float: left;
+    padding: 6px 8px;
+    border-radius: 0;
+  }
+}

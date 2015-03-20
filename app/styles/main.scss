@@ -1,0 +1,120 @@
+@import "bootstrap";
+//@import "compass/css3";
+//@import "../bower_components/sphere-variables/variables";
+//@import "../bower_components/sphere-variables/colors";
+//@import "../bower_components/normalize/normalize";
+@import "../bower_components/sphere-validation/validation";
+//@import "../bower_components/sphere-header/header";
+//@import "../bower_components/sphere-footer/footer";
+@import "devHeader";
+@import "footer";
+@import "logo_animation";
+@import "popups";
+@import "forms";
+@import "signup_form";
+@import "apiDocs";
+
+/*html {
+  box-sizing: border-box;
+  font-family: 'Fira Sans';
+}
+html, body {
+  height: 100%;
+}
+#developers {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -305px;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+
+.clearfix {
+  display: block;
+
+  &::after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  & > * {
+    float: left;
+  }
+}
+
+body {
+  background: #000 url('/images/page-bg.png') 0 0 repeat;
+}
+
+input, button, textarea {
+  outline: none;
+  border-radius: 0;
+}
+
+.section.collapsed {
+  margin-bottom: 85px;
+}
+
+.button {
+  background: #333;
+  padding: 10px 20px 7px;
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  font-family: $sphere-font;
+  text-transform: uppercase;
+  letter-spacing: 0.012em;
+  @include transition(background 0.3s ease);
+  &._bg {
+    background-color: $sphere-color;
+  }
+
+  &:hover {
+    background: $sphere-color;
+    color: #fff;
+  }
+
+  &:disabled {
+    background: #cccccc;
+    color: #eeeeee;
+  }
+
+  &.green {
+    background: $sphere-color;
+    color: #fff;
+
+    &:hover {
+      background: #333;
+    }
+  }
+
+  &.gray {
+    background: #efefef;
+    color: #999999;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+}
+
+// Utilities
+.hidden-sm {
+  display: none;
+}
+@media (min-width: 550px) {
+  .hidden-sm {
+    display:inherit;
+  }
+}*/

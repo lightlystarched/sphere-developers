@@ -1,0 +1,29 @@
+<div id="logo-container" class="section">
+  <sp-logo-animation></sp-logo-animation>
+</div>
+<div id="form-wrapper" class="transformable animate" ng-class="{'small': !formOpen, 'big': formOpen}" ng-submit="submitRequest()">
+  <div class="sphere-caret">
+    <div class="caret-bar left"></div>
+    <img src="/images/caret.png">
+    <div class="caret-bar right"></div>
+  </div>
+  <div class="section">
+    <div class="thank-you" ng-class="{'visible': showThanks}">
+      <div class="text">
+        <h1 ng-bind-html="thanksMsg"></h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="six columns">
+          <h1 id="form-title">Get the <span>sphere API</span></h1>
+        </div>
+        <div class="six columns">
+          <h5 class="sidenote" class="column6">All fields are required.</h5>
+        </div>
+      </div>
+        <hr>
+    </div>
+    <sp-request-form></sp-request-form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+@import 'compass/css3';
+@import "../bower_components/sphere-variables/variables";
+
+/* Forms */
+
+.form {
+  position: relative;
+
+  .form_row {
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  input[type=text], input[type=password], input[type=email], textarea, select {
+    background: #eeeeee;
+    border: none;
+    padding: 10px;
+    color: #999;
+    font-size: 17px;
+    width: 100%;
+    font-weight: 200;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-family: $sphere-font;
+    @include box-sizing(border-box);
+    &.ng-dirty.ng-invalid {
+      border: 1px solid #CC0033;
+    }
+  }
+
+  textarea {
+    height: 150px;
+    max-width: 100%;
+    max-height: 150px;
+  }
+
+  input:focus, .form_row.valid input, .form_row.error input,
+  textarea:focus, .form_row.valid textarea, .form_row.error textarea {
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    color: #333;
+  }
+
+  .field_error {
+    //margin-bottom: 25px;
+
+    input, textarea {
+      border: 1px solid #CC0033;
+
+      &:focus {
+        border: 1px solid #CC0033;
+      }
+    }
+  }
+
+  #profile_settings_form {
+    .validation_msgs {
+      top: 0;
+    }
+  }
+
+  .error {
+    display: block;
+    color: #CC0033;
+    margin: 3px 0 -10px;
+  }
+}

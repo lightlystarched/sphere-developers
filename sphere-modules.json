@@ -1,0 +1,11 @@
+[
+  "normalize/*",
+  "sphere-variables/*",
+  "sphere-validation/*",
+  "sphere-header/*",
+  "sphere-footer/*",
+  "sphere-analytics/*",
+  "sphere-authentication/*",
+  "sphere-popup/*",
+  "sphere-analytics/*"
+]

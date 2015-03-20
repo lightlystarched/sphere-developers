@@ -1,0 +1,30 @@
+<section id="page-header" class="section">
+  <div class="container header-container">
+    <div class="row">
+      <div class="col-sm-6">
+        <img class="logo" src="/images/sphere-dev-logo.png">
+      </div>
+      <nav class="col-sm-6">
+        <ul class="list-inline pull-right" ng-if="isAuthenticated">
+          <li>Hi, {{user.name}}</li>
+          <li><button class="btn btn-link">Sign out</button></li>
+          <li><button class="btn btn-default">x</button></li>
+        </ul>
+        <ul class="list-inline pull-right" ng-if="!isAuthenticated">
+          <li><button class="btn btn-link" login-opener>Sign In</button></li>
+          <li><button class="btn btn-link" register-opener>Register</button></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row sub-nav" ng-if="!isAuthenticated">
+      <div class="col-md-12">
+        <ul class="list-inline list-unstyled pull-right">
+          <li>Support</li>
+          <li><a href="/#/docs">Docs</a></li>
+          <li>Products</li>
+          <li>My Info</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

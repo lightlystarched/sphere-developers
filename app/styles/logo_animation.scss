@@ -1,0 +1,223 @@
+@import "../bower_components/sphere-variables/variables";
+#logo-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+#logo-wrapper {
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  min-width: 150%;
+  max-width: 600px;
+  //left: -15%;
+  margin: 40px auto 100px auto;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  left: -25%;
+  color: #fff;
+  opacity: 0.95;
+
+  .ellipse {
+    margin-right: -0.75em;
+  }
+
+  .subtitleTwo {
+    position:relative;
+  }
+
+  #logo-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    .logo-bg-images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    }
+    #logo {
+      text-align: center;
+      margin: 0 25px;
+      left: 10%;
+      right: 10%;
+      padding-top: 33.33333%;
+      z-index: 98;
+      #title {
+        width: 60%;
+      }
+      #subtitle {
+        margin-top: 5px;
+        font-weight: 300; 
+        letter-spacing: -0.025em;
+        line-height: 1.25em;
+        font-size: 1.5em;
+      }
+
+      .btn-toggle-form {
+        font-size: 1.15em;
+        border-radius: 0;
+        background-color: #000;
+        color: $sphere-color;
+        border-color: $sphere-color;
+        //@include sphere-color();
+        //@include sphere-border();
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px 15px;
+        margin-top: 0;
+        font-weight: 400;
+        text-transform: uppercase;
+        z-index: 99;
+        font-size: 0.85em;
+        letter-spacing: 0.075em;
+        -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        &.hover {
+          background-color: $sphere-color;
+          color: black;
+        }
+      }
+    }
+    #bg-veins {
+      background-image: url('/images/SphereDesign-layered.png');
+    }
+
+    #border-circle {
+      background-image: url('/images/center-Circle.png');
+      &.rotated{
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    #node {
+      background-image: url('/images/node.png');
+      .blue & { background-image: url('/images/node_blue.png'); }
+      .gray & { background-image: url('/images/node_gray.png'); }
+      .orange & { background-image: url('/images/node_orange.png'); }
+    }
+    .veins {
+      background-size: 400% 200%;
+      background-image: url('/images/veins.png');
+      .blue & { background-image: url('/images/veins_blue.png'); }
+      .gray & { background-image: url('/images/veins_gray.png'); }
+      .orange & { background-image: url('/images/veins_orange.png'); }
+      &.lightOn { opacity: 1; }
+      &.vein0 {background-position: 0 0;}
+      &.vein1 {background-position: 33.333333% 0;}
+      &.vein2 {background-position: 66.666666% 0;}
+      &.vein3 {background-position: 99.999999% 0;}
+      &.vein4 {background-position: 0 99.999999%;}
+      &.vein5 {background-position: 33.333333% 99.999999%;}
+      &.vein6 {background-position: 66.666666% 99.999999%;}
+      &.vein7 {background-position: 99.999999% 99.999999%;}
+    }
+
+    #bg-glow {
+      opacity: 0.75;
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 0%, rgba(77,77,77,0) 70%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.25)), color-stop(70%,rgba(77,77,77,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 0%,rgba(77,77,77,0) 70%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 0%,rgba(77,77,77,0) 70%,rgba(0,0,0,0) 100%); /* Opera 12+ */
+      background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.25) 0%,rgba(77,77,77,0) 70%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: radial-gradient(ellipse at center,  rgba(255,255,255,0.25) 0%,rgba(77,77,77,0) 70%,rgba(0,0,0,0) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63ffffff', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+
+    .fade {
+      opacity: 0;
+      -webkit-transition: 1500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: 1500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: 1500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: 1500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: 1500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      &.lightOn {
+        opacity: 1 !important;
+      }
+
+      &.ng-hide {
+        opacity: 0;
+      }
+
+      &.ng-hide-remove-active {
+        opacity: 1;
+        &.bg-design {
+          opacity: 0.15;
+        }
+      }
+
+    }
+    .slideDown {
+      position: relative;
+      max-height: 50px;
+      top: -275px;
+      opacity: 0;
+      -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      &.lightOn {
+        top: 0;
+        opacity: 1;
+        max-height: 200px;
+      }
+
+      &.ng-hide {
+        top: -500px;
+        opacity: 0;
+        max-height: 50px;
+      }
+
+      &.ng-hide-remove-active {
+        opacity: 1;
+        max-height: 200px;
+        top: 0;
+      }
+    }
+    .rotate {
+      -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) transform;
+      -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) transform;
+      -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) transform;
+      -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) transform;
+      transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) transform;
+    }
+  }
+  
+}
+
+
+// For larger displays
+@media (min-width: 550px) {
+  #logo-wrapper {
+    left: 0;
+    min-width: 375px;
+    #logo-background {
+      #logo {
+        #subtitle {
+          font-size: 2em;
+        }
+        .btn-toggle-form {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}

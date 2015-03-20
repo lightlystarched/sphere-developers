@@ -1,0 +1,16 @@
+<div class="form">
+  <form ng-show="!emailRegistered" ng-submit="submit()">
+    <div class="clearfix">
+      <input type="text" validate="'email'" placeholder="email address" ng-model="registerEmail" />
+      <button type="submit" class="button {{$parent.userInfo.pallet}}_bg">GO</button>
+    </div>
+    <div class="clearfix keep_informed">
+      <input type="checkbox" name="keepInformed" id="keepInformed" ng-model="isInformed" />
+      <div class="checkbox icon-shareClose" ng-class="{checked: isInformed}" ng-click="isInformed = !isInformed"></div>
+      <label for="keepInformed">Keep me informed on updates regarding Sphere</label>
+    </div>
+  </form>
+  <div ng-show="emailRegistered" class="thank_you">
+    Thank you!
+  </div>
+</div>

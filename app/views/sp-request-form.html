@@ -1,0 +1,39 @@
+  <form class="container form-container" name="requestApi" sp-form="requestApi" form-class="sp-register-form" novalidate ng-init="showMsg = ''" contact>
+    <div class="row">
+      <div class="six columns">
+        <input type="text" class="u-full-width" placeholder="First Name" name="name" ng-model="name" ng-disabled="!formOpen" tabindex="1" autofocus required>
+      </div>
+      <div class="six columns">
+        <input type="text" class="u-full-width" placeholder="Last Name" name="surname" ng-model="surname" ng-disabled="!formOpen" tabindex="2" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <input type="email" class="u-full-width" placeholder="Email" name="email" ng-model="email" ng-disabled="!formOpen" tabindex="3" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <input type="text" class="u-full-width" placeholder="Company" name="company" ng-model="company" ng-disabled="!formOpen" tabindex="4" required>
+      </div>
+      <div class="six columns">
+        <input type="text" class="u-full-width" placeholder="Title" name="title" ng-model="title" ng-disabled="!formOpen" tabindex="5" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <input type="text" class="u-full-width" placeholder="Sphere Username" name="username" ng-model="username" ng-disabled="!formOpen" tabindex="6" required>
+      </div>
+      <div class="six columns">
+        <h5 class="u-full-width register-prompt"><span class="icon-rightArrow"></span> Don't have one? Register <a register-opener href="#" class="{{userInfo.pallet}}_text">here</a></h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <textarea class="u-full-width" name="comments" ng-model="comments" ng-disabled="!formOpen" placeholder="How do you plan on using the API?" tabindex="7" required></textarea>
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <button class="submit" type="submit" tabindex="8">Submit</button>
+    </div>
+  </form>

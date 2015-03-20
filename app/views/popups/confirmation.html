@@ -1,0 +1,26 @@
+<div class="inner" confirmation invite>
+  <h1>Thanks for <br/>Confirming</h1>
+
+  <p>
+    Want to invite your friends?
+  </p>
+
+  <form sp-form="invite" name="invite" ng-init="showMsg = ''" novalidate>
+    <div class="form">
+      <input ng-if="inviter" type="hidden" name="inviter" value="{{inviter}}" />
+      <div ng-if="!inviter" class="form_row">
+        <input type="text" ng-model="inviter" sp-validate="'specialChars'" name="inviter" placeholder="your name" required ng-pattern="regPatterns.text" ng-focus="showMsg = 'inviter'">
+        <ng-include src="'bower_components/sphere-validation/name_msgs.html'" ng-show="invite.inviter.$dirty && invite.inviter.$invalid && showMsg === 'inviter'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input type="text" ng-model="invites" sp-validate="'emails'" name="invites" placeholder="friends' email addresses" required>
+      </div>
+      <div class="button_wrapper">
+        <button type="submit" class="button {{userInfo.pallet}}_bg_hover">Send Invites</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>

@@ -1,0 +1,31 @@
+<div class="inner" login>
+  <h1>Sign in <span>to Sphere</span></h1>
+
+  <form name="login" sp-form="login" ng-init="showMsg = ''" novalidate>
+    <div class="form">
+      <div class="form_row">
+        <input placeholder="email" ng-model="username" name="username" type="email" autofocus required ng-focus="showMsg = 'username'"/>
+        <ng-include src="'bower_components/sphere-validation/email_msgs.html'" ng-show="login.username.$dirty && login.username.$invalid && showMsg === 'username'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input placeholder="password" ng-model="password" name="password" type="password" required/>
+      </div>
+      <div class="form_row" ng-if="showCaptcha">
+        <h6>Please type the letters you see below</h6>
+        <img ng-src="{{captchaImage}}">
+        <input type="text" ng-validate name="captcha" ng-model="captcha" required>
+      </div>
+      <div class="buttons_wrapper">
+        <button type="submit" name="submit" class="button {{userInfo.pallet}}_bg_hover" login>Sign In</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <footer>
+    <p><a href="#/account/forgot_password" class="{{userInfo.pallet}}_text" forgot-opener>Forgot Password?</a></p>
+    <p>Not a member? <a href="#/account/register" class="{{userInfo.pallet}}_text" register-opener>Sign Up</a></p>
+  </footer>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>

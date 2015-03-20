@@ -1,0 +1,50 @@
+<div class="inner" invite>
+
+  <div class="step" ng-if="!fromBtn">STEP 2 of 2</div>
+
+  <h1>Share with Friends</h1>
+
+  <form name="invite" sp-form="invite" ng-init="showMsg = ''" novalidate>
+    <h4>Send an invitation</h4>
+    <div class="form" ng-class="{clearfix: inviter}">
+      <input ng-if="inviter" type="hidden" name="inviter" value="{{inviter}}" />
+      <div ng-if="!inviter" class="form_row">
+        <input type="text" ng-model="inviter" sp-validate="'specialChars'" name="inviter" placeholder="your name" required ng-pattern="regPatterns.text" ng-focus="showMsg = 'inviter'">
+        <ng-include src="'bower_components/sphere-validation/name_msgs.html'" ng-show="invite.inviter.$dirty && invite.inviter.$invalid && showMsg === 'inviter'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input type="text" sp-validate="'emails'" ng-model="invites" name="invites" placeholder="friends' email addresses" required/>
+      </div>
+      <div class="button_wrapper">
+        <button type="submit" class="button {{userInfo.pallet}}_bg_hover">Send Invites</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <div class="or">
+    <div class="line {{userInfo.pallet}}_bg"></div>
+    <span class="{{userInfo.pallet}}_bg">OR</span>
+  </div>
+
+  <h4 class="share">Post the link to
+    <span class="facebook {{userInfo.pallet}}_text_hover" data-action="fb" data-url="https://www.sphere.com/#/products" data-content="Check out a smarter way to discover interesting content" share-btn>
+      <span class="icon icon-facebook {{userInfo.pallet}}_text"></span>facebook
+    </span> or
+    <span class="{{userInfo.pallet}}_text_hover" data-action="twitter" data-url="https://www.sphere.com/#/products" data-content="Check out a smarter way to discover interesting content: " share-btn>
+      <span class="icon icon-twitter {{userInfo.pallet}}_text"></span>twitter
+    </span>
+  </h4>
+
+  <div class="or">
+    <div class="line {{userInfo.pallet}}_bg"></div>
+    <span class="{{userInfo.pallet}}_bg">OR</span>
+  </div>
+
+  <div class="center">
+    <h4>Copy and share this link:</h4>
+    <p class="link">https://www.sphere.com/#/products</p>
+  </div>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>

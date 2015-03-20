@@ -1,0 +1,40 @@
+<div class="inner" register>
+
+  <div class="step">STEP 1 of 2</div>
+
+  <h1>Create an <br />Account</h1>
+
+  <form name="register" sp-form="register" ng-init="showMsg = ''" novalidate>
+    <div class="form">
+      <div class="form_row">
+        <input type="text" name="name" sp-validate="'specialChars'" ng-max-length="20" ng-model="name" placeholder="full name" autofocus required ng-focus="showMsg = 'name'"/>
+        <ng-include src="'bower_components/sphere-validation/name_msgs.html'" ng-show="register.name.$dirty && register.name.$invalid && showMsg === 'name'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input type="email" name="email" ng-model="email" placeholder="email address" required ng-focus="showMsg = 'email'"/>
+        <ng-include src="'bower_components/sphere-validation/email_msgs.html'" ng-show="register.email.$dirty && register.email.$invalid && showMsg === 'email'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input type="password" name="password" ng-model="password" placeholder="enter password" required sp-pwd-validate ng-trim="false" ng-pattern="regPatterns.text" ng-focus="showMsg = 'password'">
+        <ng-include src="'bower_components/sphere-validation/pwd_msgs.html'" ng-show="showMsg === 'password'"></ng-include>
+      </div>
+      <div class="form_row">
+        <input type="password" name="confirm" ng-model="passwordConfirm" placeholder="retype password" required sp-pwd-confirm="password" ng-trim="false" ng-focus="showMsg = 'confirm'">
+        <ng-include src="'bower_components/sphere-validation/confirm_msgs.html'" ng-show="showMsg === 'confirm'"></ng-include>
+      </div>
+      <div class="button_wrapper">
+        <button type="submit" class="button {{userInfo.pallet}}_bg_hover">Register</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <footer>
+    <p>Already a member? <a href="#/account/login" class="{{userInfo.pallet}}_text" login-opener>Sign in</a></p>
+    <p style="margin-top: 30px;">
+      Click with confidence. <br />View Our &nbsp;<a href="https://www.outbrain.com/privacy-new" class="{{userInfo.pallet}}_text" target="_blank">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>

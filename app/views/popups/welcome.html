@@ -1,0 +1,27 @@
+<div class="inner" register-email-form>
+  <h1>Welcome</h1>
+
+  <p>
+    We're creating a new experience for you<br/>
+    to discover the best content on the web.
+  </p>
+  <p>
+    We're excited by all the interest. Please<br/>
+    sign up for a beta-invite.
+  </p>
+
+  <form name="welcome" sp-form="welcome" novalidate>
+    <input type="hidden" name="channel" value="Homepage"/>
+    <div class="form">
+      <div class="form_row">
+        <input placeholder="email" ng-model="email" name="email" type="email" required autofocus/>
+      </div>
+      <div class="buttons_wrapper">
+        <button class="button {{userInfo.pallet}}_bg_hover">Sign up</button>
+      </div>
+      <div class="loading_wrapper" loader="userInfo.pallet"></div>
+    </div>
+  </form>
+
+  <span class="close_popup closeLB icon-shareClose {{userInfo.pallet}}_text_hover"></span>
+</div>
