@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+  <li ng-repeat="item in thisMenu">
+    <button class="btn btn-link" ng-click="gotTo(item)" ng-click="item.showGroup = !item.showGroup">{{item.text}}</button>
+    <div ng-switch on="item.subgroup.length > 0" ng-show="item.showGroup">
+      <div ng-switch-when="true">
+        <div sp-doc-submenu ng-model="item.subgroup"></div>  
+      </div>
+    </div>
+  </li>
+</ul>

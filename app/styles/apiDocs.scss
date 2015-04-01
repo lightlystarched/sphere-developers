@@ -4,7 +4,7 @@
 // Variables
 $get-color: rgb(38,144,251);
 $get-background: rgba(38,144,251,0.2);
-$post-color: rgb(99,204,155);
+$post-color: #00cc99;
 $post-background: rgba(99,204,155,0.2);
 $delete-color: rgb(218,68,82);
 $delete-background: rgba(218,68,82,0.2);
@@ -12,7 +12,12 @@ $put-color: #f9f2e9;
 $put-background: #f0e0ca;
 $patch-color: #FCE9E3;
 $patch-background: #F5D5C3;
-
+.readme {
+  word-wrap: break-word;
+  img {
+    max-width: 100%;
+  }
+}
 #api-docs {
   * {
     outline: none;
@@ -64,7 +69,9 @@ $patch-background: #F5D5C3;
 }
 
 .swagger-ui {
+  background: #000 url('/images/page-bg.png') 0 0 repeat;
   color: #fff;
+  height: 100%;
   .api-description {
     font-weight: 300;
     a {

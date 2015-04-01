@@ -2,6 +2,7 @@
   "name": "developers",
   "version": "0.0.0",
   "dependencies": {
+    "autoprefixer-core": "^5.1.8",
     "fetch-swagger-schema": "^0.1.2",
     "swagger-client": "^2.1.10-M1",
     "swagger-ui": "^2.1.8-M1"
@@ -26,6 +27,7 @@
     "grunt-karma": "^0.10.1",
     "grunt-newer": "^0.7.0",
     "grunt-ng-annotate": "^0.3.0",
+    "grunt-postcss": "^0.3.0",
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.1.1",
     "grunt-wiredep": "^1.7.0",

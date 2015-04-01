@@ -13,7 +13,7 @@ angular.module('developersApp')
       });
     }
   };
-})/*
+})
 .directive('loginOpener', function (UserService, PopupService) {
   return {
     restrict: 'A',
@@ -386,4 +386,4 @@ angular.module('developersApp')
       });
     }
   };
-})*/;
+});

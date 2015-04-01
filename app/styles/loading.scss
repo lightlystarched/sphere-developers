@@ -1,0 +1,13 @@
+#loading-pip {
+  color: #fff;
+  position: fixed;
+  top: calc(50% - 35px);
+  left: calc(50% - 90px);
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background-color: rgba(0,0,0,0.3);
+  padding: 25px;
+  z-index: 999;
+}

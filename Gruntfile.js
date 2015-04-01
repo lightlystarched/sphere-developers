@@ -337,6 +337,13 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      dev: {
+        files: [{
+          expand: true,
+          src: ['./bower_components/sphere-documentation/**'],
+          dest: '<%= yeoman.app %>/docs/'
+        }]
+      },
       dist: {
         files: [{
           expand: true,
@@ -408,6 +415,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+      'copy:dev',
       'watch'
     ]);
   });

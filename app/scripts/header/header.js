@@ -6,9 +6,10 @@ angular.module('sphere.devHeader', [
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'views/header.html',
-    scope: {},
+    templateUrl: 'views/partials/header.html',
     link: function () {
+
+      //scope.currentState = $state.current.name;
       /*scope.$watch(function () { return UserService.getIsAuthenticated(); }, function (auth) {
         scope.isAuthenticated = auth;
         if (auth) {

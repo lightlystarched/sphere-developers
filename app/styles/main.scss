@@ -1,11 +1,11 @@
 @import "bootstrap";
-//@import "compass/css3";
+@import "compass/css3";
 //@import "../bower_components/sphere-variables/variables";
 //@import "../bower_components/sphere-variables/colors";
 //@import "../bower_components/normalize/normalize";
 @import "../bower_components/sphere-validation/validation";
-//@import "../bower_components/sphere-header/header";
 //@import "../bower_components/sphere-footer/footer";
+@import "document_menu";
 @import "devHeader";
 @import "footer";
 @import "logo_animation";
@@ -13,6 +13,47 @@
 @import "forms";
 @import "signup_form";
 @import "apiDocs";
+@import "loading";
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #000 url('/images/page-bg.png') 0 0 repeat;
+  margin-bottom: 150px;
+}
+
+a, button {
+  outline: 0;
+}
+
+.main {
+  background-color: #000;
+  color: #fff;
+}
+
+.color-inverse {
+  background-color: #000;
+  color: #fff;
+}
+
+.push-down {
+  margin-top: $line-height-computed;
+}
+
+#developers {
+  position: relative;
+  height: 100%;
+}
+
+.list-unstyled .divider {
+  color: #999;
+  margin: 0;
+  padding: 0;
+}
 
 /*html {
   box-sizing: border-box;

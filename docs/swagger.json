@@ -1,0 +1,361 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.1.0",
+        "title": "Sphere APIs",
+        "description": "[Sphere](http://www.sphere.com) APIs for consuming and engaging with personalized content recommendations\n"
+    },
+    "schemes": [
+        "https"
+    ],
+    "host": "api.outbrain.com",
+    "basePath": "/sphere",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/recommendations/documents": {
+            "get": {
+                "summary": "The main end-point for recommending documents to a user",
+                "responses": {
+                    "200": {
+                        "description": "Returns document recommendations",
+                        "schema": {
+                            "$ref": "#/definitions/Recommendations"
+                        }
+                    }
+                }
+            }
+        },
+        "/recommendations/categories": {
+            "get": {
+                "summary": "An end-point for recommending Categories to a user",
+                "responses": {
+                    "200": {
+                        "description": "Returns a collections of categories",
+                        "schema": {
+                            "properties": {
+                                "total": {
+                                    "type": "integer"
+                                },
+                                "items": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Category"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/recommendations/sites": {
+            "get": {
+                "summary": "An end-point for recommending Sites to a user",
+                "responses": {
+                    "200": {
+                        "description": "Returns a collections of Sites",
+                        "schema": {
+                            "properties": {
+                                "total": {
+                                    "type": "integer"
+                                },
+                                "items": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Site"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Returns the full list of categories"
+                    }
+                }
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "All is ok"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Category object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Category"
+                        }
+                    }
+                ]
+            }
+        },
+        "/sites": {
+            "get": {
+                "summary": "Lists all sites",
+                "responses": {
+                    "200": {
+                        "description": "A list of all sites"
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limits the number of results.",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start index of the results. Useful for paging results.",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ]
+            }
+        },
+        "/topics": {
+            "get": {
+                "summary": "Lists all topics",
+                "responses": {
+                    "200": {
+                        "description": "A list of all topics",
+                        "schema": {
+                            "$ref": "#/definitions/Topic"
+                        }
+                    }
+                }
+            }
+        },
+        "/documents/{documentId}": {
+            "get": {
+                "summary": "Retrieve a document",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "documentId",
+                        "type": "string",
+                        "description": "Id of the document to be retrieved",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Loads the details of a document.",
+                        "schema": {
+                            "$ref": "#/definitions/Document"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Category": {
+            "description": "Represents a category with it's hiererchy. E.g.: Science within Technology",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of this category"
+                },
+                "fullHierarchy": {
+                    "type": "string",
+                    "description": "Full description of the category. Sub categories separated by '/'"
+                }
+            }
+        },
+        "Topic": {
+            "description": "Represents a topic. E.g. Espresso.",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the topic"
+                }
+            }
+        },
+        "Site": {
+            "description": "Represents a short descriptions of a website",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the site. E.g. GeekTyrant"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL of the website."
+                },
+                "alternateName": {
+                    "type": "string",
+                    "description": "Alternate name, short and without spaces"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Site description"
+                },
+                "logos": {
+                    "description": "Site logos.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Logo"
+                    }
+                },
+                "categories": {
+                    "description": "Describes the categories of the articles in this site",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            }
+        },
+        "Logo": {
+            "description": "A logo",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Image URL of the logo"
+                }
+            }
+        },
+        "Image": {
+            "description": "An Image",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "Image URL"
+                },
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                }
+            }
+        },
+        "Document": {
+            "description": "Represents a document (web page) in a website",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Title of the document"
+                },
+                "originalImage": {
+                    "$ref": "#/definitions/Image",
+                    "description": "Original image, usually on the same site as the document."
+                },
+                "publishTime": {
+                    "type": "string",
+                    "format": "dateTime",
+                    "description": "Publish date of the document. Example 2015-02-24T02:54:51Z"
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Author of the article"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A short summary of the document"
+                },
+                "language": {
+                    "type": "string",
+                    "description": "A 2-letter code that describes the language of the document (See ISO 639-1)"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "Content Type. Possible values are 'ARTICLE' or 'VIDEO'"
+                },
+                "intereted": {
+                    "type": "string",
+                    "description": "Personalized signal that describes the user's interest relation to this document. Possible values are 'yes', 'no' and 'none'."
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL of the document (web-page)"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                },
+                "topics": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Topic"
+                    }
+                },
+                "site": {
+                    "$ref": "#/definitions/Site",
+                    "description": "The site that this document belongs to"
+                }
+            }
+        },
+        "Recommendation": {
+            "description": "A single recommendation",
+            "properties": {
+                "clickUrl": {
+                    "type": "string",
+                    "format": "url",
+                    "desription": "The URL that the user should be redirected to when the recommendation is clicked"
+                },
+                "imageUrl": {
+                    "type": "string",
+                    "format": "url",
+                    "description": "The image (URL) that should be displayed to the user"
+                },
+                "propmoted": {
+                    "type": "boolean",
+                    "description": "true if this recommendation is propmoted. false if it's not a promoted link"
+                },
+                "explanation": {
+                    "type": "string",
+                    "description": "a brief explanation to the reason this recommendation is displayed"
+                },
+                "document": {
+                    "$ref": "#/definitions/Document"
+                }
+            }
+        },
+        "Recommendations": {
+            "description": "A collection of recommendations",
+            "properties": {
+                "requestId": {
+                    "type": "string",
+                    "description": "A unique id of the request."
+                },
+                "pageViewId": {
+                    "type": "string",
+                    "description": "A unique id of all requests of the same page view"
+                },
+                "total": {
+                    "type": "integer",
+                    "description": "Number of returned recommendations"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Recommendation"
+                    }
+                }
+            }
+        }
+    }
+}

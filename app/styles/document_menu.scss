@@ -1,0 +1,31 @@
+.document-menu {
+  z-index: 800;
+  background-color: #EFEFEF;
+  button {
+    white-space: normal;
+    text-align: left;
+  }
+  ul {
+    margin: 0;
+  }
+  .toplevel {
+    .btn-link, .list-item {
+      font-size: 1.5em;
+    }
+    ul {
+      margin-left: 15px;
+      .btn-link, .list-item {
+        font-size: 1em;
+      }
+    }
+  }
+  .btn-link, .list-item {
+    color: #333;
+    outline: 0;
+    &:active, &:hover, &:visited, &.current {
+      text-decoration: none;
+      background-color: #fff !important;
+      color: #999 !important;
+    }
+  }
+}

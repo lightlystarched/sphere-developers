@@ -17,8 +17,10 @@ angular
     'ngTouch',
     'swaggerUi',
     'ui.router',
+    'ui.bootstrap',
+    'angular-markdown',
+    'sphere.authentication',
     'sphere.devHeader',
-    'sphere.footer',
     'sphere.localstorage',
     'sphere.popup',
     'sphere.analytics'
