@@ -28,7 +28,7 @@ angular.module('developersApp')
           templateUrl: 'views/popups/login.html',
           customClass: 'login_popup',
           closeButton: false,
-          _topPosition: 100,
+          //_topPosition: 100,
           _width: 340
         });
       });
@@ -133,7 +133,7 @@ angular.module('developersApp')
           templateUrl: 'views/popups/register.html',
           customClass: 'register_popup',
           closeButton: false,
-          _topPosition: 100,
+          //_topPosition: 100,
           _width: 340
         });
       });
@@ -186,7 +186,7 @@ angular.module('developersApp')
                   templateUrl: 'views/popups/invite_friends.html',
                   customClass: 'invite_friends_popup',
                   closeButton: false,
-                  _topPosition: 100,
+                  //_topPosition: 100,
                   _width: 470,
                   inviter: params.name || ''
                 });
@@ -243,7 +243,7 @@ angular.module('developersApp')
           customClass: 'contact_popup',
           closeButton: false,
           fromBtn: true,
-          _topPosition: 100,
+          //_topPosition: 100,
           _width: 340,
           email: scope.userInfo && scope.userInfo.email || ''
         });
@@ -321,7 +321,7 @@ angular.module('developersApp')
           customClass: 'invite_friends_popup',
           closeButton: false,
           fromBtn: true,
-          _topPosition: 100,
+          //_topPosition: 100,
           _width: 470,
           inviter: scope.userInfo && scope.userInfo.name || ''
         });

@@ -34,7 +34,7 @@
     <!-- Add your site or application content here -->
     <div id="developers" class="state-{{state.current}}">
       <sp-dev-header user-auth="isAuthenticated"></sp-dev-header>
-      <div class="container-fluid" ui-view style="margin-top: 100px;"></div>
+      <div id="main-content" class="container-fluid" ui-view></div>
     </div>
     <sp-dev-footer></sp-dev-footer>
     <!-- build:js(.) scripts/oldieshim.js -->
@@ -77,6 +77,7 @@
         <script src="scripts/filters/mdDocParser.js"></script>
         <script src="scripts/services/authentication.js"></script>
         <script src="bower_components/sphere-popup/popup.js"></script>
+        <script src="bower_components/sphere-validation/validation.js"></script>
         <script src="bower_components/sphere-analytics/analytics.js"></script>
         <script src="bower_components/sphere-localstorage/localstorage.js"></script>
         <script src="scripts/swagger-ui.js"></script>

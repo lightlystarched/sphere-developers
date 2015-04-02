@@ -19,6 +19,7 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-markdown',
+    'sphere.validation',
     'sphere.authentication',
     'sphere.devHeader',
     'sphere.localstorage',

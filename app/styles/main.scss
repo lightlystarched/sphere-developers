@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import "compass/css3";
+//@import "compass/css3";
 //@import "../bower_components/sphere-variables/variables";
 //@import "../bower_components/sphere-variables/colors";
 //@import "../bower_components/normalize/normalize";
@@ -23,11 +23,24 @@ html {
 
 body {
   background: #000 url('/images/page-bg.png') 0 0 repeat;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 a, button {
   outline: 0;
+}
+
+#main-content {
+  margin-top: 80px;
+}
+
+@media (max-width: 992px) {
+  #main-content {
+    margin-top: 40px;
+    .state-docs & {
+      margin-top: 80px;
+    }
+  }
 }
 
 .main {

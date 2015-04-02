@@ -3,19 +3,26 @@
 
 // Variables
 $get-color: rgb(38,144,251);
-$get-background: rgba(38,144,251,0.2);
+$get-background: rgba(51,51,51,0.5);
 $post-color: #00cc99;
-$post-background: rgba(99,204,155,0.2);
+$post-background: rgba(51,51,51,0.5);
 $delete-color: rgb(218,68,82);
-$delete-background: rgba(218,68,82,0.2);
+$delete-background: rgba(51,51,51,0.5);
 $put-color: #f9f2e9;
-$put-background: #f0e0ca;
+$put-background: rgba(51,51,51,0.5);
 $patch-color: #FCE9E3;
-$patch-background: #F5D5C3;
+$patch-background: rgba(51,51,51,0.5);
 .readme {
   word-wrap: break-word;
+  p {
+    font-size: 1.14em;
+    line-height: 1.5em;
+  }
   img {
+    display: block;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 #api-docs {
@@ -324,10 +331,11 @@ $patch-background: #F5D5C3;
   .get {
     .heading, .content {
       background-color: $get-background;
-      border: 1px solid $get-color;
+      border: 1px solid #333;
     }
     .http-method {
-      background-color: $get-color;
+      color: $get-color;
+      background-color: #333;
     }
     h5, .description {
       color: $get-color;
@@ -340,10 +348,11 @@ $patch-background: #F5D5C3;
   .post {
     .heading, .content {
       background-color: $post-background;
-      border: 1px solid $post-color;
+      border: 1px solid #333;
     }
     .http-method {
-      background-color: $post-color;
+      color: $post-color;
+      background-color: #333;
     }
     h5, .description {
       color: $post-color;
@@ -356,10 +365,11 @@ $patch-background: #F5D5C3;
   .delete {
     .heading, .content {
       background-color: $delete-background;
-      border: 1px solid $delete-color;
+      border: 1px solid #333;
     }
     .http-method {
-      background-color: $delete-color;
+      color: $delete-color;
+      background-color: #333;
     }
     h5, .description {
       color: $delete-color;
@@ -372,10 +382,11 @@ $patch-background: #F5D5C3;
   .put {
     .heading, .content {
       background-color: $put-background;
-      border: 1px solid $put-color;
+      border: 1px solid #333;
     }
     .http-method {
-      background-color: $put-color;
+      color: $put-color;
+      background-color: #333;
     }
     h5, .description {
       color: $put-color;
@@ -389,10 +400,11 @@ $patch-background: #F5D5C3;
   .patch {
     .heading, .content {
       background-color: $patch-background;
-      border: 1px solid $patch-color;
+      border: 1px solid #333;
     }
     .http-method {
-      background-color: $patch-color;
+      color: $patch-color;
+      background-color: #333;
     }
     h5, .description {
       color: $patch-color;

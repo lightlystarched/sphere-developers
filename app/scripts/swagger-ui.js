@@ -166,6 +166,17 @@ angular
 			console.log(resources);
 		}
 
+		$scope.updateIds = function () {
+			angular.forEach($scope.form, function (form) {
+				if (form['X-API-KEY']) {
+					form['X-API-KEY'] = $scope.swaggerInput.apiKey.$modelValue;
+				} 
+				if (form['X-USER-ID']) {
+					form['X-API-KEY'] = $scope.swaggerInput.clientId.$modelValue;
+				}
+			});
+		};
+
 		/**
 		 * show all resource's operations as list or as expanded list
 		 */
@@ -180,6 +191,7 @@ angular
 		 * sends a sample API request
 		 */
 		$scope.submitTryIt = function(operation) {
+    console.log('Input: ', $scope.form[operation.id]);
 			operation.loading = true;
 			swaggerClient
 				.send(swagger, operation, $scope.form[operation.id], $scope.transformTryIt)

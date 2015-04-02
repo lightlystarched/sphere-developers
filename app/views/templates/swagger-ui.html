@@ -3,6 +3,19 @@
 		<h3 id="sphere-api-specs" ng-bind="infos.title"></h3>
 	</div>
 	<div class="api-description" ng-bind-html="infos.description"></div>
+	<div class="row">
+		<form name="swaggerInput" id="api-key-input" class="form-inline col-xs-12" ng-submit="updateIds(resources)" style="margin-top: 15px; margin-bottom: 15px;" novalidate>
+			<div class="form-group">
+				<label for="apiKey" class="sr-only">API Key</label>
+				<input name="apiKey" class="form-control" ng-model="swaggerInput.apiKey.$modelValue" placeholder="Api Key">
+			</div>
+			<div class="form-group">
+				<label for="clientId" class="sr-only">Client ID</label>
+				<input name="clientId" ng-model="swaggerInput.clientId.$modelValue" class="form-control" placeholder="Client ID">
+			</div>
+			<button type="submit" class="btn btn-primary">UPDATE</button>
+		</form>
+	</div>
 	<div class="api-infos">
 		<div class="api-infos-contact" ng-if="infos.contact">
 			<a href="{{infos.contact.url}}">contact the developer</a>
@@ -11,22 +24,6 @@
 			<span>license: </span><a href="{{infos.license.url}}" ng-bind="infos.license.name"></a>
 		</div>
 	</div>
-  <div class="row">
-    <div class="input-group pull-right" ng-if="state.current === 'docs'" style="margin-top: 5px;">
-      <input type="text" class="form-control" placeholder="API Key">
-      <span class="input-group-btn">
-        <span class="btn btn-primary">EXPLORE</span>
-      </span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="input-group pull-right" ng-if="state.current === 'docs'" style="margin-top: 5px;">
-      <input type="text" class="form-control" placeholder="User ID">
-      <span class="input-group-btn">
-        <span class="btn btn-primary">EXPLORE</span>
-      </span>
-    </div>
-  </div>
 	<ul class="list-unstyled endpoints">
 	    <li ng-repeat="api in resources" class="endpoint" ng-init="api.open = true" ng-class="{active:api.open}">
 	        <div class="clearfix">

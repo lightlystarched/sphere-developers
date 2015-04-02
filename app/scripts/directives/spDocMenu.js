@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('developersApp')
-.directive('spDocMenu', function ($log, $location, $anchorScroll) {
+.directive('spDocMenu', function ($log, $location, anchorScroll) {
   return {
     restrict: 'E',
     replace: true,
@@ -10,26 +10,16 @@ angular.module('developersApp')
       thisMenu: '=spDoc'
     },
     link: function (scope) {
-      //$log.debug('Document passed to menu directive: ', doc);
-
-      /*scope.$watch('currentDocs', function (doc) {
-        if (doc) {
-          console.log('Formatting docs: ', doc);
-          scope.thisMenu = $filter('mdDocParser')(doc);
-          //$log.debug('This menu: ', scope.thisMenu, ' and the document: ', doc);
-        }
-
-      });*/
 
       scope.goTo = function (link) {
         //$log.debug('Going to ', link);
         $location.hash(link);
-        $anchorScroll();
+        anchorScroll.scrollTo(link);
       };
     }
   };
 })
-.directive('spHeaderDocMenu', function ($log, $location, $anchorScroll) {
+.directive('spHeaderDocMenu', function ($log, $location, anchorScroll) {
   return {
     restrict: 'E',
     replace: true,
@@ -38,23 +28,29 @@ angular.module('developersApp')
       thisMenu: '=spHeadDoc'
     },
     link: function (scope) {
-      console.log('This menu: ', scope.thisMenu);
-      //$log.debug('Document passed to menu directive: ', doc);
-
-      /*scope.$watch('currentDocs', function (doc) {
-        if (doc) {
-          console.log('Formatting docs: ', doc);
-          scope.thisMenu = $filter('mdDocParser')(doc);
-          //$log.debug('This menu: ', scope.thisMenu, ' and the document: ', doc);
-        }
-
-      });*/
 
       scope.goTo = function (link) {
         //$log.debug('Going to ', link);
         $location.hash(link);
-        $anchorScroll();
+        anchorScroll.scrollTo(link);
       };
+    }
+  };
+})
+.directive('spMenuItem', function ($location) {
+  return {
+    restrict: 'A',
+    scope: {
+      thisItem: '=spMenuItem'
+    },
+    link: function (scope, element) {
+      scope.$watch(function () { return $location.hash(); }, function (newHash) {
+        if (!element.hasClass('current') && newHash === scope.thisItem.link) {
+          element.addClass('current');
+        } else if (element.hasClass('current') && newHash !== scope.thisItem.link) {
+          element.removeClass('current');
+        }
+      });
     }
   };
 });

@@ -41,9 +41,8 @@ angular.module('developersApp')
       }
     });
 
-
-    console.log('Swagger: ', swagger);
     // Parse the swagger doc for menu items
+    swaggerMenu.subgroup.push({text: 'API Key Input', fullText: 'API Key Input', link: 'api-key-input', subgroup: [], showGroup: false});
     angular.forEach(swagger.tags, function (tag) {
       var link = tag.name.toLowerCase().replace(/\s/g, '-'),
         item = {text: tag.description, fullText: tag.description, link: link, subgroup: [], showGroup: false};

@@ -1,6 +1,13 @@
 .document-menu {
   z-index: 800;
   background-color: #EFEFEF;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   button {
     white-space: normal;
     text-align: left;
@@ -22,10 +29,12 @@
   .btn-link, .list-item {
     color: #333;
     outline: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
     &:active, &:hover, &:visited, &.current {
       text-decoration: none;
-      background-color: #fff !important;
-      color: #999 !important;
+      background-color: #fff;
+      color: #999;
     }
   }
 }

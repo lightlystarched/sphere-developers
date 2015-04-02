@@ -5,7 +5,7 @@
 // Reset and dependencies
 @import "../../bower_components/bootstrap-sass-only/scss/bootstrap/normalize";
 @import "../../bower_components/bootstrap-sass-only/scss/bootstrap/print";
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/glyphicons";
+//@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/glyphicons";
 
 // Core CSS
 @import "../../bower_components/bootstrap-sass-only/scss/bootstrap/scaffolding";
@@ -40,10 +40,10 @@
 @import "../../bower_components/bootstrap-sass-only/scss/bootstrap/close";
 
 // Components w/ JavaScript
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/modals";
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/tooltip";
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/popovers";
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/carousel";
+//@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/modals";
+//@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/tooltip";
+//@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/popovers";
+//@import "../../bower_components/bootstrap-sass-only/scss/bootstrap/carousel";
 
 // Utility classes
 @import "../../bower_components/bootstrap-sass-only/scss/bootstrap/utilities";

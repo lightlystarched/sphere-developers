@@ -40,6 +40,7 @@ angular.module('developersApp')
   $rootScope.authChanged = function() {
     $rootScope.isAuthenticated = UserService.getIsAuthenticated();
     $rootScope.userInfo = $rootScope.mergeUserInfo();
+    $rootScope.userInfo.pallet = 'green';
 
     if(!$rootScope.$$phase) {
       $rootScope.$apply();

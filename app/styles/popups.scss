@@ -55,10 +55,10 @@
   }
 
   .popup_content {
-    position: absolute;
+    position: fixed;
     z-index: 992;
     left: 50%;
-    top: 50%;
+    top: 15%;
     background: #fff;
     border-top: 5px solid $sphere-color;
     color: #333333;
@@ -71,6 +71,33 @@
 
     > .inner {
       padding: 10px 20px;
+    }
+
+    form {
+      .button_wrapper {
+        margin: 0 auto;
+        button {
+          background: #333;
+          padding: 10px 20px 7px;
+          color: #fff;
+          display: inline-block;
+          font-size: 1em;
+          cursor: pointer;
+          border: 0;
+          font-family: "Fira Sans",sans-serif,helvetica,arial;
+          text-transform: uppercase;
+          letter-spacing: .012em;
+          -moz-transition: background .3s ease;
+          -o-transition: background .3s ease;
+          -ms-transition: background .3s ease;
+          -webkit-transition: background .3s ease;
+          transition: background .3s ease;
+          text-transform: uppercase;
+          &:hover {
+            background-color: $sphere-color;
+          }
+        }
+      }
     }
 
     h1 {
@@ -259,12 +286,12 @@
 
     span {
       display: inline-block;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       padding: 4px 5px 6px;
       color: #fff;
-      font-weight: bold;
-      background: $sphere-color;
+      font-weight: 700;
+      background: #0c9;
       border-radius: 50em;
       position: relative;
       z-index: 10;

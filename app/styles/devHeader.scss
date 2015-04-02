@@ -10,9 +10,37 @@
   background-color: rgba(0, 0, 0,1);
   color: #fff;
   width:100%;
-  height: 50px;
+  height: 40px;
+  .greeting {
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
   .state-docs & {
-    height: 100px;
+    height: 80px;
+  }
+
+  .row {
+    height: 40px;
+  }
+
+  .tablet {
+    .logo {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+  }
+
+  .desktop {
+    .list-inline {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  #header-menu-btn {
+    width: 40px;
+    height: 40px;
+    padding: 2px 0 0 5px;
   }
 
   #header-nav {
@@ -79,9 +107,39 @@
   }
 
   .header-doc-menu {
+    margin-top: 8px;
     .dropdown-menu {
       overflow-y: auto;
       max-height: 500px;
+      button {
+        white-space: normal;
+        text-align: left;
+      }
+      ul {
+        margin: 0;
+      }
+      &.toplevel {
+        .btn-link, .list-item {
+          font-size: 1.5em;
+        }
+        ul {
+          margin-left: 15px;
+          .btn-link, .list-item {
+            font-size: 1em;
+          }
+        }
+      }
+      .btn-link, .list-item {
+        color: #333;
+        outline: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.2em;
+        &:active, &:hover, &:visited, &.current {
+          text-decoration: none;
+          background-color: #fff;
+          color: #999;
+        }
+      }
     }
   }
 
@@ -116,6 +174,9 @@
 
   .logo-md {
     position: relative;
+    background-color: #000;
+    height: 80px;
+    padding-top: 15px;
     &:after {
       left: 100%;
       top: 50%;
@@ -127,8 +188,8 @@
       pointer-events: none;
       border-color: rgba(0, 0, 0, 0);
       border-left-color: #000;
-      border-width: 50px;
-      margin-top: -50px;
+      border-width: 40px;
+      margin-top: -40px;
       z-index: 999;
     }
   }
@@ -196,7 +257,7 @@
     #header-nav {
       .dropdown-menu {
         position: fixed;
-        top: 50px;
+        top: 40px;
         left: 0;
         right: 0;
         width: 100%;

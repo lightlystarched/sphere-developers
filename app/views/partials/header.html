@@ -2,16 +2,16 @@
   <div class="container-fluid visible-xs visible-sm tablet"><!--Mobile and Tablet Header-->
     <div class="row" style="background-color: #292929;">
       <a class="col-xs-10" ui-sref="home"><img class="logo" src="/images/sphere-dev-logo.png"></a>
-      <div class="col-xs-2" style="right: -15px;">
+      <div class="col-xs-2" style="right: -25px;">
         <div id="header-nav" class="btn-group pull-right" dropdown is-open="ham.isopen">
-          <button type="button" class="btn btn-primary btn-block dropdown-toggle" dropdown-toggle ng-disabled="disabled" style="width: 50px; height: 50px;">
+          <button type="button" id="header-menu-btn" class="btn btn-primary btn-block dropdown-toggle" dropdown-toggle ng-disabled="disabled">
             <span class="icon-profile"></span>
             <span class="icon-shareClose"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li ng-if="isAuthenticated">HI, {{userInfo.name}} <button class="btn btn-link" logout>[ sign out ]</button></li>
+            <li class="greeting" ng-if="isAuthenticated">HI, {{userInfo.name}} <button class="btn btn-link" logout>[ sign out ]</button></li>
             <li ng-if="!isAuthenticated"><button class="btn btn-link primary-link" register-opener>Register</button> | <button class="btn btn-link primary-link" login-opener>Sign In</button></li>
-            <li><a href="https://www.sphere.com/support">Support</a></li>
+            <!--<li><a href="https://www.sphere.com/support">Support</a></li>-->
             <li><a ui-sref="docs" ng-class="{current: state.current === 'docs'}">Docs</a></li>
             <li><a href="https://www.sphere.com">Products</a></li>
             <li ng-if="isAuthenticated"><a href="https://www.sphere.com/#/profile">My Info</a></li>
@@ -20,37 +20,37 @@
       </div>
     </div>
     <div class="row" ng-show="state.current === 'docs'" style="background-color: #EFEFEF; height: 50px;">
-      <div class="btn-group col-xs-12 col-sm-6 header-doc-menu document-menu" dropdown is-open="status.isopen">
-        <button type="button" class="btn btn-default btn-block dropdown-toggle" dropdown-toggle ng-disabled="disabled" style="margin-top: 8px; margin-left: 8px;">
+      <div class="btn-group col-xs-12 col-sm-6 header-doc-menu" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-default btn-block dropdown-toggle" dropdown-toggle ng-disabled="disabled">
           Documents <span class="caret"></span>
         </button>
         <sp-header-doc-menu sp-head-doc="docMenu"></sp-header-doc-menu>
       </div>
     </div>
   </div>
-  <div class="container-fluid hidden-xs hidden-sm desktop" style="height: 100px;"><!--Desktop header-->
-    <div class="row" style="background-color: #292929; height:100px;">
-      <div class="col-md-3 logo-md" style="background-color: #000; height: 100px;">
-        <a ui-sref="home"><img class="logo" src="/images/sphere-dev-logo.png" style="margin-top: 30px;"></a>
+  <div class="container-fluid hidden-xs hidden-sm desktop"><!--Desktop header-->
+    <div class="row" style="background-color: #292929; height:80px;">
+      <div class="col-md-3 logo-md">
+        <a ui-sref="home"><img class="logo" src="/images/sphere-dev-logo.png"></a>
       </div>
-      <div class="col-md-9" style="height: 100px; padding-left: 0;">
-        <div class="row" style="height: 50px;">
-          <nav class="col-md-offset-8 col-md-4">
-            <ul class="list-inline pull-right" ng-if="isAuthenticated" style="margin-top: 10px;">
-              <li>Hi, {{userInfo.name}}</li>
+      <div class="col-md-9" style="height: 80px; padding-left: 0;">
+        <div class="row" style="height: 40px;">
+          <nav class="col-md-offset-7 col-md-5">
+            <ul class="list-inline pull-right" ng-if="isAuthenticated">
+              <li class="greeting">Hi, {{userInfo.name}}</li>
               <li><button class="btn btn-link" logout>[ sign out ]</button></li>
             </ul>
-            <ul class="list-inline pull-right" ng-if="!isAuthenticated" style="margin-top: 10px;">
-              <li><button class="btn btn-link" login-opener>Sign In</button></li>
+            <ul class="list-inline pull-right" ng-if="!isAuthenticated">
+              <li><button class="btn btn-link" login-opener>SIGN IN</button></li>
               <li class="divider">|</li>
-              <li><button class="btn btn-link" register-opener>Register</button></li>
+              <li><button class="btn btn-link" register-opener>REGISTER</button></li>
             </ul>
           </nav>
         </div>
-        <div class="row sub-nav hidden-xs hidden-sm" style="height: 50px;">
+        <div class="row sub-nav hidden-xs hidden-sm" style="height: 40px;">
           <div class="col-md-offset-5 col-md-7">
             <ul class="list-inline list-unstyled pull-right" style="margin: 10px 0;">
-              <li><a href="https://www.sphere.com/support">Support</li>
+              <!--<li><a href="https://www.sphere.com/support">Support</li>-->
               <li><a ui-sref="docs" ng-class="{current: state.current === 'docs'}">Docs</a></li>
               <li><a href="https://www.sphere.com">Products</a></li>
               <li ng-if="isAuthenticated"><a href="https://www.sphere.com/#/profile">My Info</a></li>
@@ -60,13 +60,4 @@
       </div>
     </div>
   </div>
-  <ul class="list-group slide-down visible-xs visible-sm" ng-hide="true">
-    <li class="list-group-item"><button class="btn btn-link">REGISTER</button> | <button class="btn btn-link">SIGN IN</button></li>
-    <li class="list-group-item">
-      <a ui-sref="docs">Docs</a>
-    </li>
-    <li class="list-group-item">
-      <a href="#">Products</a>
-    </li>
-  </ul>
 </section>
