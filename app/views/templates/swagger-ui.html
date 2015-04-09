@@ -9,11 +9,7 @@
 				<label for="apiKey" class="sr-only">API Key</label>
 				<input name="apiKey" class="form-control" ng-model="swaggerInput.apiKey.$modelValue" placeholder="Api Key">
 			</div>
-			<div class="form-group">
-				<label for="clientId" class="sr-only">Client ID</label>
-				<input name="clientId" ng-model="swaggerInput.clientId.$modelValue" class="form-control" placeholder="Client ID">
-			</div>
-			<button type="submit" class="btn btn-primary">UPDATE</button>
+			<button type="submit" class="btn btn-primary" ng-disabled="apiUpdated"><span ng-if="!apiUpdated">UPDATE</span><span ng-if="apiUpdated">FIELDS UPDATED!</span></button>
 		</form>
 	</div>
 	<div class="api-infos">
@@ -25,7 +21,7 @@
 		</div>
 	</div>
 	<ul class="list-unstyled endpoints">
-	    <li ng-repeat="api in resources" class="endpoint" ng-init="api.open = true" ng-class="{active:api.open}">
+	    <li ng-repeat="api in resources | orderBy:'name':true" class="endpoint" ng-init="api.open = true" ng-class="{active:api.open}">
 	        <div class="clearfix">
 		        <ul class="list-inline pull-left endpoint-heading">
 		            <li>

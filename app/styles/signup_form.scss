@@ -91,7 +91,7 @@
     margin-bottom: 0;
     font-weight: 300;
     font-style: italic;
-    margin-top: 0;
+    margin-top: 10px;
   }
   hr {
     display: block; height: 1px;
@@ -110,7 +110,10 @@
     }
 
     .row {
-      margin-bottom: 15px;
+      margin-bottom: 0;
+      .col-xs-12 {
+        margin-bottom: 5px;
+      }
     }
 
     .sp_validation_msgs {
@@ -244,6 +247,14 @@
 @media (min-width: 650px) {
   #form-wrapper {
     top: -160px;
+    .col-sm-6 {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+    .col-xs-12 {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 }
 

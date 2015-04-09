@@ -386,4 +386,71 @@ angular.module('developersApp')
       });
     }
   };
+})
+.directive('shareBtn', function($http, $q, $timeout, UserService) {
+  return {
+    restrict: 'A',
+    link: function($scope, element, attr) {
+      element.on('click', function(e) {
+        e.preventDefault();
+        var type = element.data('action').replace(/\'/g, '');
+        var shortUrl = element.data('shorturl');
+        var url = null;
+        var left = 20;
+        var top = 20;
+        var width = 500;
+        var height = 400;
+        var content = $scope.doc && $scope.doc.content ? $scope.doc.content : element.data('content');
+        var source = $scope.doc && $scope.doc.source ? $scope.doc.source : '';
+        var thumbnail = $scope.doc && $scope.doc.thumb ? $scope.doc.thumb : '';
+        var docUrl = $scope.doc && $scope.doc.url ? $scope.doc.url : element.data('url');
+        var origDocUrl = $scope.doc && $scope.doc.origURL ? $scope.doc.origURL : element.data('url');
+
+        var openPopup = function() {
+          var popup = window.open(url, '', 'scrollbars=no,height=' + height + ',width=' + width +',left=' + left + ',top=' + top);
+          if (typeof popop !== 'undefined' && window.focus) {
+            popup.focus();
+          }
+        };
+
+        switch(type) {
+          case 'fb':
+            url = 'https://www.facebook.com/sharer/sharer.php?u=';
+            break;
+          case 'twitter':
+            url = 'https://twitter.com/share?text=' + content + ' ' + source + '&via=Sphere&url=';
+            break;
+          case 'email':
+            height = 600;
+            url = 'https://www.sphere.com/s/share/email.html?docImageUrl=' + thumbnail + '&docTitle=' + content + '&sourceName=' + source;
+            if(UserService.getIsAuthenticated()) {
+              url += '&fromEmail=' + UserService.getUserInfo().email;
+            }
+            url += '&docUrl=';
+            break;
+        }
+
+        if(shortUrl) {
+          // Request for shorten URL (with bit.ly)
+          var request = $http.get('https://omakase.outbrain.com/Omakase/api/surl?url=' + encodeURIComponent(origDocUrl));
+
+          request.then(function(result) {
+            if(result.data.success && result.data.data) {
+              url += result.data.data;
+            }
+            else {
+              url += encodeURIComponent($scope.doc.url);
+            }
+            // Open share action in popup
+            openPopup(url);
+          });
+        }
+        else {
+          url += encodeURIComponent(origDocUrl);
+          openPopup(url);
+        }
+
+      });
+    }
+  };
 });

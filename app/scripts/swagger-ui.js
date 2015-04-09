@@ -22,7 +22,7 @@ angular
 			}
 		};
 	})
-	.controller('swaggerUiController', ['$scope', '$http', '$sce', 'swaggerModel', 'swaggerClient', function($scope, $http, $sce, swaggerModel, swaggerClient) {
+	.controller('swaggerUiController', ['$scope', '$http', '$sce', '$timeout', 'swaggerModel', 'swaggerClient', function($scope, $http, $sce, $timeout, swaggerModel, swaggerClient) {
 
 		var swagger;
 
@@ -31,6 +31,8 @@ angular
 		// WARNING authentication is not implemented, please use 'transform-try-it' directive's param to customize API calls
 
 		//TODO find a way to implement permalinks !!
+
+		$scope.apiUpdated = false;
 
 		$scope.$watch('url', function(url) {
 			//reset
@@ -167,14 +169,18 @@ angular
 		}
 
 		$scope.updateIds = function () {
-			angular.forEach($scope.form, function (form) {
-				if (form['X-API-KEY']) {
-					form['X-API-KEY'] = $scope.swaggerInput.apiKey.$modelValue;
-				} 
-				if (form['X-USER-ID']) {
-					form['X-API-KEY'] = $scope.swaggerInput.clientId.$modelValue;
-				}
-			});
+			var newValue = $scope.swaggerInput.apiKey.$modelValue;
+			if (newValue && newValue !== '') {
+				angular.forEach($scope.form, function (form) {
+					if (form.Authorization) {
+						form.Authorization = newValue;
+					}
+				});
+			}
+			$scope.apiUpdated = true;
+			$timeout(function () {
+				$scope.apiUpdated = false;
+			}, 3000);
 		};
 
 		/**

@@ -1,4 +1,5 @@
 @import 'compass/css3';
+@import "variables";
 @import "../bower_components/sphere-variables/variables";
 
 // Variables
@@ -15,8 +16,35 @@ $patch-background: rgba(51,51,51,0.5);
 .readme {
   word-wrap: break-word;
   p {
-    font-size: 1.14em;
-    line-height: 1.5em;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1.7em;
+  }
+  h1 {
+    letter-spacing: 0.01em;
+    color: #222;
+    font-weight: 300;
+    margin-top: 40px;
+    font-size: 2em;
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+  h2 {
+    margin-top: 40px;
+    letter-spacing: 0.075em;
+    color: #666;
+    border-bottom: 1px solid #999;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+  h3 {
+    margin-top: 40px;
+    letter-spacing: -0.01em;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.275em;
   }
   img {
     display: block;
@@ -76,7 +104,6 @@ $patch-background: rgba(51,51,51,0.5);
 }
 
 .swagger-ui {
-  background: #000 url('/images/page-bg.png') 0 0 repeat;
   color: #fff;
   height: 100%;
   .api-description {
@@ -455,5 +482,18 @@ $patch-background: rgba(51,51,51,0.5);
     float: left;
     padding: 6px 8px;
     border-radius: 0;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .swagger-ui {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .readme {
+    p, h1, h2, h3, h4, h5, h6, pre, hr {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
   }
 }

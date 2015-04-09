@@ -18,6 +18,7 @@ angular
     'swaggerUi',
     'ui.router',
     'ui.bootstrap',
+    'duScroll',
     'angular-markdown',
     'sphere.validation',
     'sphere.authentication',

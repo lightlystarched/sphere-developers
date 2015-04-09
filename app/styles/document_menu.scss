@@ -8,9 +8,12 @@
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  button {
+  a, button {
     white-space: normal;
     text-align: left;
+    border: 0;
+    box-shadow: none;
+    text-decoration: none;
   }
   ul {
     margin: 0;
@@ -21,17 +24,21 @@
     }
     ul {
       margin-left: 15px;
-      .btn-link, .list-item {
+      a, .btn-link, .list-item {
         font-size: 1em;
+        margin-top:5px;
+        margin-bottom: 5px;
       }
     }
   }
-  .btn-link, .list-item {
+  a, .btn-link, .list-item {
     color: #333;
     outline: 0;
     letter-spacing: -0.02em;
     line-height: 1.2em;
-    &:active, &:hover, &:visited, &.current {
+    box-shadow: none;
+
+    &:active, &:hover, &:visited, &.active {
       text-decoration: none;
       background-color: #fff;
       color: #999;

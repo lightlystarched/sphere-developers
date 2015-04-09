@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
   <li ng-repeat="item in thisMenu">
-    <button class="btn btn-link" sp-menu-item="item" ng-click="gotTo(item)" ng-click="item.showGroup = !item.showGroup">{{item.text}}</button>
+    <button class="btn btn-link btn-block" ng-href="#{{item.link}}" du-smooth-scroll du-scrollspy="{{item.link}}">{{item.text}}</button>
     <div ng-switch on="item.subgroup.length > 0" ng-show="item.showGroup">
       <div ng-switch-when="true">
         <div sp-doc-submenu ng-model="item.subgroup"></div>  

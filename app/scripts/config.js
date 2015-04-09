@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('developersApp')
+.value('duScrollOffset', 100)
 .run(function ($log, $anchorScroll, $rootScope, UserService, LocalStorageService) {
   $anchorScroll.yOffset = 120;
   $rootScope.isAuthenticated = false;

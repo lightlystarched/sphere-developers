@@ -1,9 +1,9 @@
-<ul class="dropdown-menu toplevel" role="menu" style="background-color: #EFEFEF;left: 20px;">
-  <li ng-repeat="item in thisMenu">
-    <button class="btn btn-link btn-block" sp-menu-item="item" ng-click="goTo(item.link)">{{item.text}}</button>
+<ul class="dropdown-menu toplevel" role="menu" style="background-color: #EFEFEF;left: 20px;" du-spy-context>
+  <li ng-repeat="item in docMenu">
+    <button class="btn btn-link btn-block" ng-href="#{{item.link}}" du-smooth-scroll du-scrollspy>{{item.text}}</button>
     <ul class="list-unstyled">
       <li ng-repeat="subitem in item.subgroup">
-        <button class="btn btn-link btn-block" sp-menu-item="subitem" ng-click="goTo(subitem.link)">{{subitem.text}}</button>
+        <button class="btn btn-link btn-block" ng-href="#{{subitem.link}}" du-smooth-scroll du-scrollspy>{{subitem.text}}</button>
       </li>
     </ul>
   </li>

@@ -89,7 +89,7 @@ angular.module('developersApp')
             });
           }, 1000);
         }, 1500);
-      }, 3000);
+      }, 1500);
     }, 1500);
     //$scope.veinList[3].isOn = true;
   };
