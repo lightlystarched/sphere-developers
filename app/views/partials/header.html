@@ -9,8 +9,8 @@
             <span class="icon-shareClose"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li class="greeting" ng-if="isAuthenticated">HI, {{userInfo.name}} <button class="btn btn-link" logout>[ sign out ]</button></li>
-            <li ng-if="!isAuthenticated"><button class="btn btn-link primary-link" register-opener>Register</button> | <button class="btn btn-link primary-link" login-opener>Sign In</button></li>
+            <li class="greeting" ng-if="isAuthenticated">HI, {{userInfo.name}} <button class="btn btn-link signout" logout>[ sign out ]</button></li>
+            <li ng-if="!isAuthenticated"><button class="btn btn-link primary-link" login-opener>Sign In</button> | <button class="btn btn-link primary-link" register-opener>Register</button></li>
             <!--<li><a href="https://www.sphere.com/support">Support</a></li>-->
             <!--<li><a ui-sref="docs" ng-class="{current: state.current === 'docs'}">Docs</a></li>-->
             <li><a href="https://www.sphere.com">For Consumers</a></li>
@@ -38,9 +38,9 @@
           <nav class="col-md-offset-7 col-md-5">
             <ul class="list-inline pull-right" ng-if="isAuthenticated">
               <li class="greeting">Hi, {{userInfo.name}}</li>
-              <li><button class="btn btn-link" logout>[ sign out ]</button></li>
+              <li><button class="btn btn-link signout" logout>[ sign out ]</button></li>
             </ul>
-            <ul class="list-inline pull-right" ng-if="!isAuthenticated">
+            <ul class="list-inline pull-right register-signin" ng-if="!isAuthenticated">
               <li><button class="btn btn-link" login-opener>SIGN IN</button></li>
               <li class="divider">|</li>
               <li><button class="btn btn-link" register-opener>REGISTER</button></li>

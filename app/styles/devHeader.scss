@@ -15,7 +15,17 @@
   .btn-link, a {
     letter-spacing: 0.05em;
   }
+
+  .register-signin {
+    margin-top: 3px;
+  }
+
+  .signout {
+    padding-top: 0;
+    padding-left: 5px;
+  }
   .greeting {
+    font-weight: 500;
     text-transform: uppercase;
     margin-top: 10px;
     letter-spacing: 0.05em;

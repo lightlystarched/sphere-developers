@@ -75,7 +75,7 @@ angular.module('developersApp')
 
   UserService.getUserInfoRequest();
 })
-.config(function ($stateProvider, $urlRouterProvider, $logProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $logProvider, $locationProvider) {
   var debugEnabled = false,
     resolve = {},
     states = {};
@@ -83,6 +83,8 @@ angular.module('developersApp')
   if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname === 'ppdlcjobiakaooocnfcdplpgddhgbpbi') {
     debugEnabled = true;
   }
+
+  //$locationProvider.html5Mode(!debugEnabled);
 
   // Define resolve object
   resolve = {

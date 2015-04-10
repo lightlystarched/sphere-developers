@@ -33,6 +33,12 @@ a, button {
 #main-content {
   margin-top: 80px;
 }
+.state-home {
+  #main-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 @media (max-width: 992px) {
   #main-content {
@@ -67,6 +73,11 @@ a, button {
   color: #999;
   margin: 0;
   padding: 0;
+}
+
+.btn:focus {
+  outline: none !important;
+  text-decoration: none !important;
 }
 
 /*html {

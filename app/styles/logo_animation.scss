@@ -18,6 +18,15 @@
   color: #fff;
   opacity: 0.95;
 
+  .preview-link {
+    margin-top: 25px;
+    span {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+    }
+  }
+
   .ellipse {
     margin-right: -0.75em;
   }

@@ -9,8 +9,6 @@
   .copy {
     color: #aaa;
     font-size: 10px;
-    margin-top: 10px;
-    margin-bottom: 0;
   }
   ul {
     margin-bottom: 0;
@@ -83,9 +81,20 @@
 
 @media (min-width: $screen-md-min) {
   #sphere-footer {
+    .copy {
+      margin-top: 10px;
+      margin-bottom: 0;
+      float: right;
+    }
     .row > div {
       padding-left: 50px;
       padding-right: 50px;
     }
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  #sphere-footer {
+    text-align: center;
   }
 }

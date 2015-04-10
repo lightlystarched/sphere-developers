@@ -14,7 +14,7 @@ angular.module('developersApp')
 
       if (header > 0) {//This is a header
         var text = line.split(/^#+/)[1],
-          link = text.toLowerCase().replace(/[\s`':’]/g, '');
+          link = text.toLowerCase().replace(/[\s`':’\[\]]/g, '');
 
         switch (line.match(/^#+/)[0].length) {
           case 1://h1
