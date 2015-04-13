@@ -75,7 +75,7 @@ angular.module('developersApp')
 
   UserService.getUserInfoRequest();
 })
-.config(function ($stateProvider, $urlRouterProvider, $logProvider, $locationProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
   var debugEnabled = false,
     resolve = {},
     states = {};

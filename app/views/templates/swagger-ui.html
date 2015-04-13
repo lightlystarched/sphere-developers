@@ -4,7 +4,7 @@
 	</div>
 	<div class="api-description" ng-bind-html="infos.description"></div>
 	<div class="row">
-		<form name="swaggerInput" id="api-key-input" class="form-inline col-xs-12" ng-submit="updateIds(resources)" style="margin-top: 15px; margin-bottom: 15px;" novalidate>
+		<form name="swaggerInput" id="api-key-input" class="form-inline col-xs-12" ng-submit="updateIds()" style="margin-top: 15px; margin-bottom: 15px;" novalidate>
 			<div class="form-group">
 				<label for="apiKey" class="sr-only">API Key</label>
 				<input name="apiKey" class="form-control" ng-model="swaggerInput.apiKey.$modelValue" placeholder="Api Key">

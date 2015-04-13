@@ -2,20 +2,24 @@
   <div class="row">
     <div class="col-xs-12" ng-class="{'col-md-9': state.current === 'docs', 'col-md-offset-3': state.current === 'docs'}">
       <div class="row">
-        <ul class="col-md-6 col-xs-12 list-unstyled list-inline links">
+        <ul class="col-md-8 col-xs-12 list-unstyled list-inline links">
           <!--<li><a href="https://www.sphere.com">FOR CONSUMERS</a></li>-->
           <li><a href="http://content.sphere.com/about/">ABOUT SPHERE</a></li>
           <li><button class="btn btn-link default" contact-opener>CONTACT US</a></li>
           <li><a href="http://www.outbrain.com/privacy-new">PRIVACY POLICY</a></li>
           <li><button class="btn btn-link" invite-opener>INVITE FRIENDS</button></li>
+          <li class="hidden-xs social-wrapper">
+            <a href="https://twitter.com/Sphere" target="_blank" class="social_btn icon-twitter {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a>
+            <a href="https://www.facebook.com/meetsphere" target="_blank" class="social_btn icon-facebook {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a>
+          </li>
         </ul>
-        <ul class="col-md-3 col-xs-12 list-unstyled list-inline">
-          <li><a href="https://twitter.com/Sphere" target="_blank" class="social_btn icon-twitter {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a></li>
-          <li><a href="https://www.facebook.com/meetsphere" target="_blank" class="social_btn icon-facebook {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a></li>
-        </ul>
-        <div class="col-md-3 col-xs-12 col-sm-9">
+        <div class="visible-xs col-xs-12 list-unstyled list-inline">
+          <a href="https://twitter.com/Sphere" target="_blank" class="social_btn icon-twitter {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a>
+          <a href="https://www.facebook.com/meetsphere" target="_blank" class="social_btn icon-facebook {{userInfo.pallet}}_text {{userInfo.pallet}}_text_hover"></a>
+        </div>
+        <div class="col-md-4 col-xs-12">
           <ul class="list-unstyled list-inline">
-            <li class="copy">&copy;2015 Sphere.com</li>
+            <li class="copy"><h6 class="pull-right"><span>&copy;2015 Sphere.com</span> <img id="outbrain-powered" src="images/outbrain_powered.png"></h6></li>
           </ul>
         </div>
       </div>

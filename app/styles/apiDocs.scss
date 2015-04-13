@@ -14,7 +14,6 @@ $put-background: rgba(51,51,51,0.5);
 $patch-color: #FCE9E3;
 $patch-background: rgba(51,51,51,0.5);
 .readme {
-  word-wrap: break-word;
   p {
     font-weight: 300;
     font-size: 1.2em;
@@ -53,9 +52,17 @@ $patch-background: rgba(51,51,51,0.5);
   }
   img {
     display: block;
+    float: right;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
+  }
+  hr {
+    clear: both;
+    border: 0;
+    height: 0;
+  }
+  pre, code {
+    word-wrap: break-word;
   }
 }
 #api-docs {

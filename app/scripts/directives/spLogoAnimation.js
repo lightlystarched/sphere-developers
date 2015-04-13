@@ -69,7 +69,7 @@ angular.module('developersApp')
     $scope.lightSwitches.ellipse = true;
     //$scope.lightSwitches.glow = true;
 
-    // EAch of these timeouts should be pulled into separate functions that get invoked
+    // Each of these timeouts should be pulled into separate functions that get invoked
     $timeout(function () {
       $scope.lightSwitches.ellipse = false;
       $scope.veinList[3].isOn = true;
@@ -114,20 +114,6 @@ angular.module('developersApp')
         }
         scope.formOpen = !scope.formOpen;
       };
-
-      /*scope.getStyles = function () {
-        return dimensions;
-      };*/
-
-      // Keep the container element square
-      /*scope.$watch(function () { return element.width(); },
-        function (newWidth) {
-          console.log('Width has changed', newWidth);
-          if (dimensions.height !== newWidth) {
-            dimensions.height = newWidth;
-          }
-        }
-      );*/
 
       $log.debug('Starting animation');
       

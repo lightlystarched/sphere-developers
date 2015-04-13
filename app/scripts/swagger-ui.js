@@ -24,7 +24,8 @@ angular
 	})
 	.controller('swaggerUiController', ['$scope', '$http', '$sce', '$timeout', 'swaggerModel', 'swaggerClient', function($scope, $http, $sce, $timeout, swaggerModel, swaggerClient) {
 
-		var swagger;
+		var swagger,
+			defaultKey = 'API_KEY c2e75315550543fdbf0a85e9a96a458e';
 
 		// WARNING only Swagger 2.0 is supported (@see https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md)
 		// WARNING XML is not supported
@@ -168,8 +169,8 @@ angular
 			console.log(resources);
 		}
 
-		$scope.updateIds = function () {
-			var newValue = $scope.swaggerInput.apiKey.$modelValue;
+		$scope.updateIds = function (apiKey) {
+			var newValue = apiKey && apiKey !== null ? apiKey : $scope.swaggerInput.apiKey.$modelValue;
 			if (newValue && newValue !== '') {
 				angular.forEach($scope.form, function (form) {
 					if (form.Authorization) {
@@ -207,6 +208,10 @@ angular
 				});
 
 		};
+
+		$timeout(function () {
+			$scope.updateIds(defaultKey);
+		}, 100, false);
 
 	}])
 	.directive('fileInput', function() {
