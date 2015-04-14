@@ -1,59 +1,71 @@
-<div id="landing-hero" class="row">
-  <h1>Sphere</h1>
-  <h5>Enabling personalized content experiences,<br>anywhere and everywhere</h5>
-  <button class="btn btn-primary">REQUEST ACCESS</button>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-md-5">
-    <h3>Possible Description of Docs Lorem Ipsum Dolor Sit Unum</h3>
-    <ul class="row list-colored">
-      <li class="col-xs-12 col-sm-6 col-md-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-      <li class="col-xs-12 col-sm-6 col-md-12">Sed sodales lectus id ipsum aliquet, ut accumsan nunc malesuada.</li>
-      <li class="col-xs-12 col-sm-6 col-md-12">Fusce lobortis ipsum gravida, vulputate odio eu, eleifend sem.</li>
-      <li class="col-xs-12 col-sm-6 col-md-12">Nullam at metus at velit dapibus dapibus eu eu odio.</li>
-    </ul>
+<div id="new-landing">
+  <div id="landing-hero" class="row">
+    <img class="heading" src="images/sphere-logo.png">
+    <h2 class="subheading">Enabling personalized content experiences,<br>anywhere and everywhere</h2>
+    <button class="btn btn-primary btn-lg hidden-sm hidden-xs" du-smooth-scroll href="#building-blocks">REQUEST ACCESS</button>
+    <button class="btn btn-primary btn-lg visible-sm visible-xs" du-smooth-scroll href="#access-form">REQUEST ACCESS</button>
   </div>
-  <div class="col-xs-12 col-md-7">
-    <img src="#" style="width:100%;">
+  <div id="api-descript" class="row">
+    <div class="col-xs-12 col-md-5">
+      <h3 class="heading">Possible Description of Docs Lorem Ipsum Dolor Sit Unum</h3>
+      <ul class="row list-colored">
+        <li class="col-xs-12 col-sm-6 col-md-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li class="col-xs-12 col-sm-6 col-md-12">Sed sodales lectus id ipsum aliquet, ut accumsan nunc malesuada.</li>
+        <li class="col-xs-12 col-sm-6 col-md-12">Fusce lobortis ipsum gravida, vulputate odio eu, eleifend sem.</li>
+        <li class="col-xs-12 col-sm-6 col-md-12">Nullam at metus at velit dapibus dapibus eu eu odio.</li>
+      </ul>
+    </div>
+    <div class="col-xs-12 col-md-7">
+      <img src="#" style="width:100%;" title="Image placeholder">
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>The Building Blocks</h1>
-    <ul class="row" style="white-space: normal">
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Personalized Content Recommendations</h3>
-        <p>Lorem ipsum</p>
-      </li>
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Save for Later</h3>
-        <p>Lorem ipsum</p>
-      </li>
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Analytics &amp; Performance Reports</h3>
-        <p>Lorem ipsum</p>
-      </li>
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Interest Graph</h3>
-        <p>Lorem ipsum</p>
-      </li>
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Recommended Categories, Topics, &amp; Sites</h3>
-        <p>Lorem ipsum</p>
-      </li>
-      <li class="col-xs-12 col-sm-6 col-md-4">
-        <h3>Other Interactive Components</h3>
-        <p>Lorem ipsum</p>
-      </li>
-    </ul>
+  <div id="building-blocks" class="row">
+    <div class="col-xs-12">
+      <h1 class="heading">The Building Blocks</h1>
+      <ul class="row">
+        <li class="col-xs-12 col-sm-6 col-md-4 lines">
+          <span></span>
+          <h4>Personalized Content Recommendations</h4>
+          <h5>Aenean sit amet sapien eget massa mollis sollicitudin quis ut odio.</h5>
+        </li>
+        <li class="col-xs-12 col-sm-6 col-md-4 stash">
+          <span></span>
+          <h4>Save for Later</h4>
+          <h5>Phasellus et dolor sit amet dolor convallis ultricies.</h5>
+        </li>
+        <li class="col-xs-12 col-sm-6 col-md-4 analytics">
+          <span></span>
+          <h4>Analytics &amp; Performance Reports</h4>
+          <h5>Vestibulum ornare libero eget hendrerit ultricies.</h5>
+        </li>
+        <li class="col-xs-12 col-sm-6 col-md-4 circle">
+          <span></span>
+          <h4>Interest Graph</h4>
+          <h5>Donec vitae orci viverra orci laoreet convallis sed eget dolor.</h5>
+        </li>
+        <li class="col-xs-12 col-sm-6 col-md-4 finger">
+          <span></span>
+          <h4>Recommended Categories, Topics, &amp; Sites</h4>
+          <h5>Proin non arcu non felis tincidunt suscipit a et neque.</h5>
+        </li>
+        <li class="col-xs-12 col-sm-6 col-md-4 folder">
+          <span></span>
+          <h4>Other Interactive Components</h4>
+          <h5>Curabitur vel purus congue, molestie mi at, placerat velit.</h5>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>Request Access</h1>
-    <p>To apply for the Sphere API, <a href="#">click here</a></p>
-  </div>
-  <div class="col-xs-12">
-    <h1>Form goes here</h1>
+  <div id="access-form" class="row" ng-init="linkHovered = false;">
+    <div id="key-row" class="col-xs-12">
+      <button class="btn btn-primary btn-round" ng-class="{hover: linkHovered}" ng-mouseover="linkHovered = true" ng-mouseout="linkHovered = false" ng-click="formOpened = !formOpened"><span class="key" ng-class="{hide: formOpened}"></span><span class="arrow" ng-class="{hide: !formOpened}"></span></button>
+    </div>
+    <div class="col-xs-12">
+      <h3 class="heading">Request Access</h3>
+      <h4 class="subheading">To apply for the Sphere API, <button class="btn btn-link" ng-class="{hover: linkHovered}" ng-mouseover="linkHovered = true" ng-mouseout="linkHovered = false" ng-click="formOpened = !formOpened">click here.</button></h4>
+    </div>
+    <div class="col-xs-12" ng-show="formOpen">
+      <h1>Form goes here</h1>
+    </div>
   </div>
 </div>

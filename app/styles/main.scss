@@ -5,6 +5,7 @@
 //@import "../bower_components/normalize/normalize";
 @import "../bower_components/sphere-validation/validation";
 //@import "../bower_components/sphere-footer/footer";
+@import "landing";
 @import "document_menu";
 @import "devHeader";
 @import "footer";
@@ -22,11 +23,29 @@ html {
 }
 
 body {
+  background: #000 url('/images/page-bg.png') 0 0 repeat;
   margin-bottom: 100px;
 }
 
 a, button {
   outline: 0;
+}
+
+a:focus {
+  color: $brand-primary;
+  text-decoration: none;
+}
+
+button, .btn.btn-primary {
+  -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+  -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+  -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+  -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+  transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) background-color;
+  &:hover, &:focus {
+    background-color: rgb(6, 161, 216);
+    border-color: rgb(6,161,216);
+  }
 }
 
 #main-content {
@@ -74,7 +93,7 @@ a, button {
   padding: 0;
 }
 
-.btn:focus {
+.btn:focus, a:focus {
   outline: none !important;
   text-decoration: none !important;
 }
@@ -86,6 +105,8 @@ a, button {
   li {
     padding-left: 1em;
     text-indent: -0.7em;
+    font-weight: 300;
+    font-size: 18px;
     &:before {
       content: "• ";
       color: #4EA2D0;
@@ -95,12 +116,10 @@ a, button {
   }
 }
 
-// Landing page
-#landing-hero {
-  text-align: center;
-  background-color: #0E9495;
-  color: #fff;
-  padding-bottom: 25px;
+.btn-round {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
 }
 
 /*html {
