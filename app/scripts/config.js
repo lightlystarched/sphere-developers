@@ -139,6 +139,12 @@ angular.module('developersApp')
         Document: resolve.docs,
         Swagger: resolve.swagger
       }
+    },
+    landing: {
+      name: 'landing',
+      url: '/landing',
+      controller: 'MainCtrl',
+      templateUrl: 'views/landing.html'
     }
   };
   //$locationProvider.html5Mode(false);

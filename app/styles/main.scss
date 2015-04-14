@@ -22,7 +22,6 @@ html {
 }
 
 body {
-  background: #000 url('/images/page-bg.png') 0 0 repeat;
   margin-bottom: 100px;
 }
 
@@ -78,6 +77,30 @@ a, button {
 .btn:focus {
   outline: none !important;
   text-decoration: none !important;
+}
+
+.list-colored {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    padding-left: 1em;
+    text-indent: -0.7em;
+    &:before {
+      content: "• ";
+      color: #4EA2D0;
+      font-size: 30px;
+      line-height: 10px;
+    }
+  }
+}
+
+// Landing page
+#landing-hero {
+  text-align: center;
+  background-color: #0E9495;
+  color: #fff;
+  padding-bottom: 25px;
 }
 
 /*html {

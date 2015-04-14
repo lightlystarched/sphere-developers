@@ -10,10 +10,10 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li class="greeting" ng-if="isAuthenticated">HI, {{userInfo.name}} <button class="btn btn-link signout" logout>[ sign out ]</button></li>
-            <li ng-if="!isAuthenticated"><button class="btn btn-link primary-link" login-opener>Sign In</button> | <button class="btn btn-link primary-link" register-opener>Register</button></li>
+            <li ng-if="!isAuthenticated"><button class="btn btn-link primary-link" register-opener>Register</button> | <button class="btn btn-link primary-link" login-opener>Sign In</button></li>
             <!--<li><a href="https://www.sphere.com/support">Support</a></li>-->
             <!--<li><a ui-sref="docs" ng-class="{current: state.current === 'docs'}">Docs</a></li>-->
-            <li><a href="https://www.sphere.com">For Consumers</a></li>
+            <!--<li><a href="https://www.sphere.com">For Consumers</a></li>-->
             <li ng-if="isAuthenticated"><a href="https://www.sphere.com/#/profile">My Info</a></li>
           </ul>
         </div>
@@ -41,9 +41,9 @@
               <li><button class="btn btn-link signout" logout>[ sign out ]</button></li>
             </ul>
             <ul class="list-inline pull-right register-signin" ng-if="!isAuthenticated">
-              <li><button class="btn btn-link" login-opener>SIGN IN</button></li>
-              <li class="divider">|</li>
               <li><button class="btn btn-link" register-opener>REGISTER</button></li>
+              <li class="divider">|</li>
+              <li><button class="btn btn-link" login-opener>SIGN IN</button></li>
             </ul>
           </nav>
         </div>
@@ -52,7 +52,7 @@
             <ul class="list-inline list-unstyled pull-right" style="margin: 10px 0;">
               <!--<li><a href="https://www.sphere.com/support">Support</li>-->
               <!--<li><a ui-sref="docs" ng-class="{current: state.current === 'docs'}">Docs</a></li>-->
-              <li><a href="https://www.sphere.com">For Consumers</a></li>
+              <!--<li><a href="https://www.sphere.com">For Consumers</a></li>-->
               <li ng-if="isAuthenticated"><a href="https://www.sphere.com/#/profile">My Info</a></li>
             </ul>
           </div>
