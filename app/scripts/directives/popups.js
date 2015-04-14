@@ -453,4 +453,72 @@ angular.module('developersApp')
       });
     }
   };
+})
+.directive('forgotOpener', function (UserService, PopupService) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      if(scope.isInline) {
+        return;
+      }
+
+      element.on('click', function(e) {
+        e.preventDefault();
+        PopupService.openPopup(scope, {
+          templateUrl: 'views/popups/forgot_password.html',
+          customClass: 'forgot_password_popup',
+          closeButton: false,
+          fromBtn: true,
+          _topPosition: 100,
+          _width: 340
+        });
+      });
+    }
+  };
+}).directive('forgot', function (UserService, PopupService, AnalyticsService) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.on('submit', 'form', function(e) {
+        e.preventDefault();
+        var elm = angular.element(this);
+        var email = elm.find('input[name=email]').val();
+
+        //if(email && elm.find('.error').length <= 0) {
+          elm.parent().addClass('submitted');
+          elm.parents('.popup_wrapper').addClass('isLoading');
+          elm.parent().find('.loading_wrapper').show();
+          elm.find('input, textarea').blur();
+
+          var params = {
+            email: email
+          };
+
+          UserService.forgotPassword(params).then(function(result) {
+            if(!result.data.success) {
+              angular.forEach(element.find('ul'), function (list) {
+                if (angular.element(list).hasClass('sp_validation_msgs')) {
+                  angular.element(list).addClass('errors').html('<li>'+result.data.message+'</span>');
+                }
+              });
+              elm.parent().removeClass('submitted');
+              elm.parents('.popup_wrapper').removeClass('isLoading');
+              elm.parent().find('.loading_wrapper').hide();
+            }
+            else {
+              AnalyticsService.track_event('Engagement Action', 'Forgot_Password');
+              angular.element('<p class="thankyou">Please check your email inbox and<br /> follow the instructions</p>').insertAfter(elm);
+              elm.remove();
+            }
+          }, function(response) {
+            element.find('.form_row:last').find('.error').remove();
+            element.find('.form_row:last').append('<span class="error">Unable to send email. Please try again</span>');
+            elm.parent().removeClass('submitted');
+            elm.parents('.popup_wrapper').removeClass('isLoading');
+            elm.parent().find('.loading_wrapper').hide();
+          });
+        //}
+      });
+    }
+  };
 });
