@@ -1,15 +1,16 @@
 @import "variables";
 
 #new-request {
-  -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
-  -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
-  -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
-  -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
-  transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  background-color: #fff;
+  -webkit-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -moz-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -ms-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -o-transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  transition: 500ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
   max-height: 0;
   overflow: hidden;
   &.open {
-    max-height: 100%;
+    max-height: 1500px;
   }
   .container {
     max-width: 650px;
@@ -20,6 +21,9 @@
       padding-left: 5px;
       padding-right:5px;
     }
+  }
+  .form-heading {
+    margin-top: 0;
   }
   .icon-rightArrow {
     position: relative;

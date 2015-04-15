@@ -204,3 +204,13 @@
     }
   }
 }
+@media (max-width: $screen-sm-min) {
+  #new-landing {
+    #building-blocks {
+      li {
+        height: auto;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
