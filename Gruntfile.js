@@ -63,6 +63,25 @@ module.exports = function (grunt) {
       }
     },
 
+    // Generate the manifest
+    manifest: {
+      generate: {
+        options: {
+          basePath: '<%= yeoman.dist %>/',
+          verbose: true,
+          timestamp: true,
+          hash: true,
+          master: ['index.html']
+        },
+        src: [
+          'scripts/**/*.js',
+          'images/**',
+          'styles/*.css'
+        ],
+        dest: '<%= yeoman.dist %>/sphere.appcache'
+      }
+    },
+
     // The actual grunt server settings
     connect: {
       options: {
@@ -356,7 +375,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'docs/**'
           ]
         }, {
           expand: true,
@@ -435,19 +455,20 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'copy:dist',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngAnnotate',
-    'copy:dist',
     'cdnify',
     'cssmin',
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'manifest'
   ]);
 
   grunt.registerTask('default', [
