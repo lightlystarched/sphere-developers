@@ -85,35 +85,35 @@
         position: relative;
         font-weight: 300;
         font-size: 18px;
-        min-height: 60px;
+        min-height: 90px;
         span {
           position: absolute;
           display: block;
           top: 10px;
           left: 25px;
-          width: 70px;
-          height: 60px;
-          background-image: url(../images/sprites-landingPage.png);
+          
+          background: url(../images/sprites-landingPage.png) 0 0 no-repeat;
           color: #4EA2D0;
           font-size: 30px;
           line-height: 10px;
         }
-        &.lines span { background-position: -6px -211px; }
-        &.stash span { background-position: -11px -466px; }
-        &.analytics span { background-position: -11px -643px; }
-        &.circle span { background-position: -6px -383px; }
-        &.finger span { background-position: -12px -292px; }
-        &.folder span { background-position: -7px -558px; }
+        &.lines span { width: 69px; height: 59px; background-position: -6px -211px; }
+        &.stash span { width: 59px; height: 65px; background-position: -11px -466px; }
+        &.analytics span { width: 58px; height: 64px; background-position: -11px -643px; }
+        &.circle span { width: 69px; height: 69px; background-position: -6px -383px; }
+        &.finger span { width: 56px; height: 73px; background-position: -12px -292px; }
+        &.folder span { width: 67px; height: 58px; background-position: -7px -558px; }
       }
     }
     li {
       vertical-align: top;
-      height: 115px;
-      h4 {
+      height: 175px;
+      h3 {
+        margin-top: 0;
         margin-left: 85px;
         font-weight: 400;
       }
-      h5 {
+      h4 {
         margin-left: 85px;
         color: #aaa;
       }
@@ -134,6 +134,7 @@
         background-image: url(../images/sprites-landingPage.png);
         background-repeat: none;
         border: 0;
+        z-index: 400;
         span {
           display: block;
           position: absolute;
@@ -174,10 +175,14 @@
     .heading {
       margin-top: 40px;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 700;
+      letter-spacing: 0.1em;
     }
-    button {
-      font-size: 18px;
+    .subheading {
+      margin-top: 10px;
+    }
+    button.btn-link {
+      font-size: 1em;
       font-weight: 400;
       padding: 0;
       position: relative;

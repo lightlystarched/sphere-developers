@@ -1,0 +1,134 @@
+@import "variables";
+
+#new-request {
+  -webkit-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -moz-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -ms-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  -o-transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  transition: 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) max-height;
+  max-height: 0;
+  overflow: hidden;
+  &.open {
+    max-height: 100%;
+  }
+  .container {
+    max-width: 650px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+    & > div {
+      padding-left: 5px;
+      padding-right:5px;
+    }
+  }
+  .icon-rightArrow {
+    position: relative;
+    top: 2px;
+  }
+  .register {
+    span {
+      margin-top: 5px;
+    }
+    &.small {
+      margin-top: 0;
+    }
+  }
+  input, textarea {
+    background: #eee;
+    border: 1px solid #eee;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 25px;
+    color: #666;
+    font-size: 1.25em;
+    &:focus {
+      border-color: #aaa;
+      outline: 0;
+      color: #222;
+      background-color: #fff;
+      &.ng-invalid.ng-dirty {
+        border-color: #A30042;
+      }
+    }
+  }
+  textarea {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  textarea {
+    resize: none;
+    height: 110px;
+  }
+  button.btn-lg {
+    font-weight: 400;
+    font-size: 2em;
+    letter-spacing: 0.1em;
+  }
+  .sp_validation_msgs {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .thank-you {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 501;
+    text-align: center;
+    display:none;
+    &.visible {
+      display: block;
+    }
+    .text {
+      position: absolute;
+      width: 350px;
+      left: calc(50% - 175px);
+      top: 25%;
+      text-align: center;
+      background-color: #eee;
+      padding: 25px 50px;
+      color: #222;
+
+      h1 {
+        font-weight: 300;
+        line-height: 1.5em;
+      }
+    }
+  }
+  /*.sp_validation_msgs {
+    display: none;
+    margin-left: -25px;
+    margin-right: -25px;
+    &.errors {
+      display: block;
+      list-style: none;
+      padding: 15px;
+      font-weight: 300;
+      line-height: 24px;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both; 
+    }
+    li {
+      background-image: url('/images/error.png');
+      background-repeat: no-repeat;
+      line-height: 60px;
+      padding-left: 75px;
+    }
+  }*/
+}
+
+@media (max-width: $screen-sm-min) {
+  #new-request {
+    .col-sm-6:first-child {
+      margin-bottom: 10px;
+    }
+  }
+}
