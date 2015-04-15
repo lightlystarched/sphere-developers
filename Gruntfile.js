@@ -75,7 +75,7 @@ module.exports = function (grunt) {
         },
         src: [
           'scripts/**/*.js',
-          'images/**',
+          'images/*',
           'styles/*.css'
         ],
         dest: '<%= yeoman.dist %>/sphere.appcache'
